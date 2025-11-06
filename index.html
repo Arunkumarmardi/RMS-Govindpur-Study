@@ -246,7 +246,7 @@
     }
 
     .vid {
-      display: inline;
+      display: grid;
       gap: 10px;
     }
 
@@ -360,13 +360,15 @@
     </div>
   </section>
 
-  <video controls width="600" autoplay loop muted id="vid">
+  <div class="vid">
+    <video controls width="600" autoplay loop muted id="vid">
     <source src="vid6.mp4">
   </video>
 
   <video controls width="600" autoplay loop muted id="vid">
     <source src="vid3.mp4">
   </video>
+  </div>
 
   <!-- Footer -->
   <footer>
