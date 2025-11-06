@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Class 6 Computer - RMS Govindpur (Complete: Chapters 1-12, Bilingual)</title>
+  <style>
+    :root{--accent:#1b6fb0;--accent-2:#97d7ff;--bg:#f7fbff}
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      margin: 0;
+      background: var(--bg);
+      color: #123;
+      line-height: 1.5;
+    }
+
+    header {
+      background: linear-gradient(90deg, #4b9df8, var(--accent-2));
+      color: #fff;
+      padding: 22px;
+      text-align: center;
+    }
+
+    nav {
+      background: #222;
+      padding: 10px;
+      text-align: center;
+    }
+
+    nav a {
+      color: #fff;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: 600;
+    }
+
+    main {
+      max-width: 980px;
+      margin: 18px auto;
+      padding: 0 18px 40px;
+    }
+
+    .controls {
+      display:flex;justify-content:flex-end;padding:12px 18px;gap:10px;align-items:center;
+    }
+
+    .lang-toggle{
+      background:var(--accent);color:#fff;padding:8px 12px;border-radius:6px;border:none;cursor:pointer;font-weight:700
+    }
+
+    .card {
+      background: #fff;
+      border-left: 6px solid var(--accent);
+      padding: 18px;
+      margin: 14px 0;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+    }
+
+    .card h2 { color:var(--accent); margin:0 0 10px }
+    .meta { font-size:0.95rem;color:#3a5a7a;margin-bottom:8px }
+    .english p, .english ul, .english ol { margin:8px 0 }
+    .hindi p, .hindi ul, .hindi ol { margin:8px 0; font-style:normal; color:#2b2b2b }
+
+    .hindi{ display:none }
+
+    .img-ref{ text-align:center;margin-top:12px }
+    .img-ref img{ max-width:100%;height:auto;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.08) }
+
+    footer{ background:var(--accent);color:#fff;text-align:center;padding:12px;margin-top:12px }
+
+    pre.code{ background:#f4f8ff;padding:10px;border-radius:6px;overflow:auto }
+
+    /* responsive */
+    @media (max-width:640px){ .controls{flex-direction:column;align-items:flex-end} }
+
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Class 6 — Computer</h1>
+    <p>RMS Govindpur | Complete Notes (Chapters 1–12) — English & Hindi (Toggle)</p>
+  </header>
+
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="study-materials.html">Study Materials</a>
+    <a href="#chapters">All Chapters</a>
+  </nav>
+
+  <div class="controls">
+    <label style="font-size:0.95rem;color:#234;margin-right:8px">Language:</label>
+    <button class="lang-toggle" id="toggleBtn" onclick="toggleLanguage()">Switch to हिंदी</button>
+  </div>
+
+  <main id="chapters">
+
+    <!-- Chapter 1 -->
+    <section class="card" id="ch1">
+      <h2>💻 Chapter 1: Introduction to Computers</h2>
+      <div class="english">
+        <p class="meta"><strong>Overview:</strong> A computer is an electronic device that accepts data (input), processes it as per instructions, stores information, and produces meaningful output. Modern computers can perform billions of operations per second and are used in nearly every field.</p>
+
+        <h3>What is a Computer?</h3>
+        <p>Computers take raw data and transform it into useful information through a sequence: <em>Input → Process → Output → Storage</em>. They follow programs (sets of instructions) to complete tasks.</p>
+
+        <h3>Types of Computers</h3>
+        <ul>
+          <li><strong>Personal Computers (PCs):</strong> Desktops and laptops used by individuals.</li>
+          <li><strong>Tablets & Smartphones:</strong> Portable touch-based devices.</li>
+          <li><strong>Servers:</strong> Powerful machines that provide services to other computers over a network.</li>
+          <li><strong>Supercomputers:</strong> Extremely fast machines used for scientific calculations.</li>
+        </ul>
+
+        <h3>Components of a Computer</h3>
+        <ul>
+          <li><strong>CPU (Central Processing Unit):</strong> The brain that performs calculations and executes instructions.</li>
+          <li><strong>Memory:</strong> RAM and ROM for temporary and permanent storage of instructions/data.</li>
+          <li><strong>Input Devices:</strong> Keyboard, mouse, scanner.</li>
+          <li><strong>Output Devices:</strong> Monitor, printer, speakers.</li>
+        </ul>
+
+        <h3>Common Uses</h3>
+        <ul>
+          <li>Education: e-books, tutorials, assignments.</li>
+          <li>Communication: Email, messaging, video calls.</li>
+          <li>Entertainment: Games, movies, music.</li>
+          <li>Work: Documents, spreadsheets, presentations.</li>
+        </ul>
+
+        <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Computer_components.jpg" alt="Computer Components"></div>
+      </div>
+
+      <div class="hindi">
+        <p class="meta"><strong>ओवरव्यू:</strong> कंप्यूटर एक इलेक्ट्रॉनिक डिवाइस है जो डेटा (इनपुट) लेता है, निर्देशों के अनुसार उसे प्रोसेस करता है, जानकारी संग्रहीत करता है और उपयोगी आउटपुट देता है। आधुनिक कंप्यूटर बहुत तेज होते हैं और लगभग हर क्षेत्र में उपयोग किए जाते हैं।</p>
+
+        <h3>कंप्यूटर क्या है?</h3>
+        <p>कंप्यूटर कच्चे डेटा को उपयोगी जानकारी में बदलता है। इसका सामान्य क्रम है: <em>इनपुट → प्रोसेस → आउटपुट → स्टोरेज</em>. कंप्यूटर कार्य करने के लिए प्रोग्राम (निर्देशों का सेट) का पालन करते हैं।</p>
+
+        <h3>कंप्यूटर के प्रकार</h3>
+        <ul>
+          <li><strong>पर्सनल कंप्यूटर (PC):</strong> डेस्कटॉप और लैपटॉप, व्यक्तिगत उपयोग के लिए।</li>
+          <li><strong>टैबलेट और स्मार्टफोन:</strong> पोर्टेबल और टच-आधारित डिवाइस।</li>
+          <li><strong>सर्वर:</strong> नेटवर्क पर अन्य कंप्यूटरों को सेवाएँ प्रदान करने वाले शक्तिशाली मशीन।</li>
+          <li><strong>सुपरकंप्यूटर:</strong> वैज्ञानिक गणनाओं के लिए बहुत तेज मशीनें।</li>
+        </ul>
+
+        <h3>कंप्यूटर के घटक</h3>
+        <ul>
+          <li><strong>CPU (सेंट्रल प्रोसेसिंग यूनिट):</strong> मस्तिष्क जो गणनाएँ करता है और निर्देशों को निष्पादित करता है।</li>
+          <li><strong>मेमोरी:</strong> RAM और ROM अस्थायी और स्थायी रूप से डेटा रखते हैं।</li>
+          <li><strong>इनपुट डिवाइस:</strong> कीबोर्ड, माउस, स्कैनर।</li>
+          <li><strong>आउटपुट डिवाइस:</strong> मॉनिटर, प्रिंटर, स्पीकर।</li>
+        </ul>
+
+        <h3>सामान्य उपयोग</h3>
+        <ul>
+          <li>शिक्षा: ई-बुक्स, ट्यूटोरियल्स, असाइनमेंट।</li>
+          <li>संचार: ईमेल, मैसेजिंग, वीडियो कॉल।</li>
+          <li>मनोरंजन: गेम्स, फिल्में, संगीत।</li>
+          <li>काम: डॉक्यूमेंट्स, स्प्रेडशीट, प्रेजेंटेशन।</li>
+        </ul>
+
+        <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Computer_components.jpg" alt="कंप्यूटर घटक"></div>
+      </div>
+    </section>
+
+    <!-- Chapter 2 -->
+    <section class="card" id="ch2">
+      <h2>🔧 Chapter 2: Hardware &amp; Software</h2>
+      <div class="english">
+        <p class="meta"><strong>Overview:</strong> Hardware are the physical parts of a computer you can touch. Software is a set of instructions (programs) that tell the hardware what to do.</p>
+
+        <h3>Hardware</h3>
+        <p>Includes internal components like the motherboard, CPU, RAM, hard disk, and external devices like monitor, keyboard, mouse, printers. Hardware components have electrical and mechanical parts.</p>
+
+        <h3>Software</h3>
+        <p>Programs and applications that run on hardware. Software categories:</p>
+        <ul>
+          <li><strong>System Software:</strong> Operating System (OS) — manages hardware and software resources (e.g., Windows, Linux).</li>
+          <li><strong>Application Software:</strong> Programs to perform specific tasks (e.g., MS Word, Calculator, Games).</li>
+          <li><strong>Utility Software:</strong> Tools to maintain the computer (e.g., antivirus, disk tools).</li>
+        </ul>
+
+        <h3>How Hardware and Software Work Together</h3>
+        <p>Software provides instructions; CPU executes them using hardware. For example, a word processor (software) uses keyboard input (hardware) to enter text and displays it on the monitor (hardware).</p>
+
+        <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Computer_hardware_components.jpg" alt="Hardware Components"></div>
+      </div>
+
+      <div class="hindi">
+        <p class="meta"><strong>ओवरव्यू:</strong> हार्डवेयर कंप्यूटर के भौतिक भाग हैं जिन्हें हम छू सकते हैं। सॉफ्टवेयर निर्देशों का सेट होता है जो हार्डवेयर को बताता है कि क्या करना है।</p>
+
+        <h3>हार्डवेयर</h3>
+        <p>इसमें मदरबोर्ड, CPU, RAM, हार्ड डिस्क जैसी आंतरिक इकाइयाँ और मॉनिटर, कीबोर्ड, माउस, प्रिंटर जैसी बाहरी डिवाइस शामिल हैं।</p>
+
+        <h3>सॉफ्टवेयर</h3>
+        <p>प्रोग्राम और एप्लिकेशन जो हार्डवेयर पर चलते हैं। सॉफ्टवेयर के प्रकार:</p>
+        <ul>
+          <li><strong>सिस्टम सॉफ्टवेयर:</strong> ऑपरेटिंग सिस्टम (जैसे Windows, Linux) जो हार्डवेयर और सॉफ्टवेयर संसाधनों का प्रबंधन करता है।</li>
+          <li><strong>एप्लिकेशन सॉफ्टवेयर:</strong> विशिष्ट कार्यों के लिए प्रोग्राम (जैसे MS Word, कैलकुलेटर)।</li>
+          <li><strong>यूटिलिटी सॉफ्टवेयर:</strong> कंप्यूटर को मेंटेन करने वाले टूल्स (जैसे एंटीवायरस)।</li>
+        </ul>
+
+        <h3>कैसे हार्डवेयर और सॉफ्टवेयर साथ मिलकर काम करते हैं</h3>
+        <p>सॉफ्टवेयर निर्देश देता है; CPU हार्डवेयर का उपयोग करके उन निर्देशों को निष्पादित करता है। उदाहरण के लिए, वर्ड प्रोसेसर (सॉफ्टवेयर) कीबोर्ड (हार्डवेयर) से टेक्स्ट लेता है और मॉनिटर (हार्डवेयर) पर दिखाता है।</p>
+
+        <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Computer_hardware_components.jpg" alt="हार्डवेयर"></div>
+      </div>
+    </section>
+
+    <!-- Chapter 3 -->
+    <section class="card" id="ch3">
+      <h2>📝 Chapter 3: MS Word Basics</h2>
+      <div class="english">
+        <p class="meta"><strong>Overview:</strong> MS Word (or any word processor) is used to create, format, and save documents. It provides tools for typing, formatting text, inserting images, and preparing a document for printing.</p>
+
+        <h3>Creating and Saving Documents</h3>
+        <p>Open MS Word → New Document → Type your content. Save using File → Save As → Choose folder and file type (.docx, .pdf).</p>
+
+        <h3>Text Formatting</h3>
+        <ul>
+          <li>Font family and size</li>
+          <li>Bold, Italic, Underline</li>
+          <li>Text color and highlighting</li>
+          <li>Alignment: Left, Center, Right, Justify</li>
+        </ul>
+
+        <h3>Advanced Features</h3>
+        <ul>
+          <li>Insert images, tables, headers, footers, and page numbers.</li>
+          <li>Use styles (Heading 1, Heading 2) to structure documents.</li>
+          <li>Track Changes and Comments for collaborative work.</li>
+        </ul>
+
+        <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Microsoft_Word_2013_screenshot.png" alt="MS Word Screenshot"></div>
+      </div>
+
+      <div class="hindi">
+        <p class="meta"><strong>ओवरव्यू:</strong> MS Word एक वर्ड प्रोसेसर है जिसका उपयोग दस्तावेज़ बनाने, फॉर्मेट करने और सहेजने के लिए किया जाता है। यह टाइपिंग, टेक्स्ट फॉर्मेटिंग, चित्र डालने और प्रिंट के लिए दस्तावेज़ तैयार करने के टूल देता है।</p>
+
+        <h3>दस्तावेज़ बनाना और सहेजना</h3>
+        <p>MS Word खोलें → नया दस्तावेज़ → अपना कंटेंट टाइप करें। सहेजने के लिए File → Save As → फ़ोल्डर और फ़ाइल प्रकार चुनें (.docx, .pdf)।</p>
+
+        <h3>टेक्स्ट फॉर्मेटिंग</h3>
+        <ul>
+          <li>फ़ॉन्ट और आकार चुनना</li>
+          <li>बोल्ड, इटैलिक, अंडरलाइन</li>
+          <li>टेक्स्ट का रंग तथा हाइलाइटिंग</li>
+          <li>अलाइनमेंट: बाएं, केंद्र, दाएं, जस्टिफाई</li>
+        </ul>
+
+        <h3>उन्नत सुविधाएँ</h3>
+        <ul>
+          <li>चित्र, तालिकाएँ, हेडर-फूटर, पेज नंबर डालें।</li>
+          <li>स्टाइल्स (Heading 1, Heading 2) का उपयोग करके दस्तावेज़ संरचित करें।</li>
+          <li>सहयोग के लिए Track Changes और Comments का उपयोग करें।</li>
+        </ul>
+
+        <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Microsoft_Word_2013_screenshot.png" alt="MS Word Screenshot"></div>
+      </div>
+    </section>
+
+    <!-- Chapter 4 -->
+    <section class="card" id="ch4">
+      <h2>🌐 Chapter 4: Internet Safety</h2>
+      <div class="english">
+        <p class="meta"><strong>Overview:</strong> Internet safety includes practices to protect personal information, devices, and privacy online. It also involves recognizing harmful content and behaving responsibly.</p>
+
+        <h3>Important Practices</h3>
+        <ul>
+          <li>Use strong, unique passwords and change them periodically.</li>
+          <li>Enable two-factor authentication where possible.</li>
+          <li>Do not share personal information (address, phone) publicly.</li>
+          <li>Be cautious of suspicious emails or links — phishing scams aim to steal information.</li>
+          <li>Install updates and antivirus software to protect devices.</li>
+        </ul>
+
+        <h3>Digital Manners (Netiquette)</h3>
+        <p>Be respectful online, avoid rude or harmful comments, and think before posting — remember that digital actions can have lasting consequences.</p>
+
+        <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/3/36/HTTPS_Security_lock_icon.png" alt="HTTPS Lock"></div>
+      </div>
+
+      <div class="hindi">
+        <p class="meta"><strong>ओवरव्यू:</strong> इंटरनेट सुरक्षा में ऐसी आदतें शामिल हैं जो व्यक्तिगत जानकारी, उपकरणों और गोपनीयता की रक्षा करती हैं। इसमें हानिकारक सामग्री की पहचान करना और जिम्मेदारी से व्यवहार करना भी शामिल है।</p>
+
+        <h3>महत्वपूर्ण व्यवहार</h3>
+        <ul>
+          <li>मजबूत और अद्वितीय पासवर्ड का उपयोग करें और समय-समय पर बदलें।</li>
+          <li>जहाँ संभव हो दो-कारक प्रमाणीकरण सक्षम करें।</li>
+          <li>निजी जानकारी (पता, फोन) सार्वजनिक रूप से साझा न करें।</li>
+          <li>शकास्पद ईमेल या लिंक से सावधान रहें — फिशिंग धोखाधड़ी आपकी जानकारी चुराने का प्रयास कर सकती है।</li>
+          <li>उपकरणों को सुरक्षित रखने के लिए अपडेट और एंटीवायरस इंस्टॉल करें।</li>
+        </ul>
+
+        <h3>डिजिटल शिष्टाचार (नेटिकेट)</h3>
+        <p>ऑनलाइन सम्मानजनक रहें, अपमानजनक टिप्पणी से बचें और पोस्ट करने से पहले सोचें — याद रखें कि डिजिटल गतिविधियाँ स्थायी प्रभाव छोड़ सकती हैं।</p>
+
+        <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/3/36/HTTPS_Security_lock_icon.png" alt="HTTPS लॉक"></div>
+      </div>
+    </section>
+
+    <!-- Chapter 5 -->
+    <section class="card" id="ch5">
+      <h2>🖌️ Chapter 5: MS Paint</h2>
+      <div class="english">
+        <p class="meta"><strong>Overview:</strong> MS Paint is an introductory graphics editor used to create and edit simple images. It teaches basic drawing, color selection, and using tools like shapes and text.</p>
+
+        <h3>Tools and Their Uses</h3>
+        <ul>
+          <li><strong>Pencil:</strong> Draw freehand thin lines.</li>
+          <li><strong>Brush:</strong> Paint with various brush sizes and styles.</li>
+          <li><strong>Fill (Bucket):</strong> Fill closed areas with color.</li>
+          <li><strong>Text Tool:</strong> Insert text into the image.</li>
+          <li><strong>Shapes:</strong> Draw rectangles, circles, arrows, stars.</li>
+          <li><strong>Eraser:</strong> Remove parts of the drawing.</li>
+        </ul>
+
+        <h3>Image Editing Tasks</h3>
+        <ol>
+          <li>Resize and crop images to change dimensions or remove unwanted parts.</li>
+          <li>Use color picker to select existing colors from the image.</li>
+          <li>Save files in formats like PNG or JPEG for sharing.</li>
+        </ol>
+
+        <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/en/6/6b/Microsoft_Paint_screenshot.png" alt="MS Paint Interface"></div>
+      </div>
+
+      <div class="hindi">
+        <p class="meta"><strong>ओवरव्यू:</strong> MS Paint एक बेसिक ग्राफिक्स एडिटर है जिसका उपयोग सरल चित्र बनाने और संपादित करने के लिए किया जाता है। यह ड्राइंग, रंग चयन और शेप्स और टेक्स्ट जैसे टूल्स का उपयोग सिखाता है।</p>
+
+        <h3>टूल्स और उनके उपयोग</h3>
+        <ul>
+          <li><strong>पेंसिल:</strong> पतली फ्रीहैंड लाइने खींचने के लिए।</li>
+          <li><strong>ब्रश:</strong> विभिन्न ब्रश आकार और स्टाइल के साथ पेंट करना।</li>
+          <li><strong>फिल (बकेट):</strong> बंद क्षेत्रों को रंग से भरना।</li>
+          <li><strong>टेक्स्ट टूल:</strong> छवि में टेक्स्ट डालना।</li>
+          <li><strong>शेप्स:</strong> आयत, वृत्त, तीर, स्टार आदि बनाना।</li>
+          <li><strong>इरेज़र:</strong> चित्र के भागों को हटाना।</li>
+        </ul>
+
+        <h3>इमेज संपादन के कार्य</h3>
+        <ol>
+          <li>इमेज का आकार बदलें (resize) और अनचाहे हिस्से हटाने के लिए crop करें।</li>
+          <li>चित्र से रंग लेने के लिए कलर पिकर का उपयोग करें।</li>
+          <li>शेयर करने के लिए PNG या JPEG प्रारूप में सहेजें।</li>
+        </ol>
+
+        <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/en/6/6b/Microsoft_Paint_screenshot.png" alt="MS पेंट इंटरफ़ेस"></div>
+      </div>
+    </section>
+
+    <!-- Chapter 6 -->
+    <section class="card" id="ch6">
+      <h2>📁 Chapter 6: File Management</h2>
+      <div class="english">
+        <p class="meta"><strong>Overview:</strong> File management is organizing, storing, and handling files and folders so they are easy to find and use. Good file management saves time and prevents data loss.</p>
+
+        <h3>Files and Folders</h3>
+        <p>A <strong>file</strong> is a document, image, video, or any data saved on a computer. A <strong>folder</strong> (directory) holds files and other folders (subfolders).</p>
+
+        <h3>Common Tasks</h3>
+        <ul>
+          <li>Create a folder: Right-click → New → Folder; give it a descriptive name.</li>
+          <li>Rename: Right-click → Rename.</li>
+          <li>Copy & Paste: Ctrl+C and Ctrl+V to duplicate files.</li>
+          <li>Cut & Paste (Move): Ctrl+X and Ctrl+V to move files.</li>
+          <li>Delete: Send to Recycle Bin; empty Recycle Bin to permanently remove.</li>
+          <li>Search: Use file search to find files by name or content.</li>
+        </ul>
+
+        <h3>File Extensions and Types</h3>
+        <p>Extensions identify file types: <code>.docx</code> (Word), <code>.xlsx</code> (Excel), <code>.jpg</code> (image), <code>.mp3</code> (audio).</p>
+
+        <h3>Best Practices</h3>
+        <ul>
+          <li>Use meaningful file names (e.g., math_homework_aug2025.docx).</li>
+          <li>Organize by subject, date, or project.</li>
+          <li>Keep backups on external drives or cloud storage.</li>
+        </ul>
+
+        <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/File_Manager_icon.svg" alt="File Manager"></div>
+      </div>
+
+      <div class="hindi">
+        <p class="meta"><strong>ओवरव्यू:</strong> फाइल प्रबंधन में फाइलों और फ़ोल्डरों का संगठन, भंडारण और प्रबंधन शामिल है ताकि उन्हें आसानी से खोजा और उपयोग किया जा सके। अच्छा फाइल प्रबंधन समय बचाता है और डेटा नुकसान से बचाता है।</p>
+
+        <h3>फाइल और फ़ोल्डर</h3>
+        <p><strong>फाइल</strong> एक दस्तावेज़, चित्र, वीडियो या कोई भी डेटा है जो कंप्यूटर पर सहेजा जाता है। <strong>फ़ोल्डर</strong> (डायरेक्टरी) फाइलों और अन्य फ़ोल्डरों को रखता है (सबफ़ोल्डर)।</p>
+
+        <h3>सामान्य कार्य</h3>
+        <ul>
+          <li>नया फ़ोल्डर बनाना: राइट-क्लिक → New → Folder; इसका उपयोगी नाम दें।</li>
+          <li>नाम बदलना: राइट-क्लिक → Rename।</li>
+          <li>कॉपी और पेस्ट: Ctrl+C और Ctrl+V से फाइल की नकल करें।</li>
+          <li>कट और पेस्ट (मूव): Ctrl+X और Ctrl+V से फाइल को स्थानांतरित करें।</li>
+          <li>डिलीट: Recycle Bin में भेजें; स्थायी रूप से हटाने के लिए Recycle Bin खाली करें।</li>
+          <li>सर्च: नाम या कंटेंट से फाइल खोजने के लिए सर्च का उपयोग करें।</li>
+        </ul>
+
+        <h3>फाइल एक्सटेंशन और प्रकार</h3>
+        <p>एक्सटेंशन फाइल प्रकार पहचानते हैं: <code>.docx</code> (Word), <code>.xlsx</code> (Excel), <code>.jpg</code> (छवि), <code>.mp3</code> (ऑडियो)।</p>
+
+        <h3>सर्वोत्तम प्रथाएँ</h3>
+        <ul>
+          <li>अर्थपूर्ण फ़ाइल नाम रखें (जैसे math_homework_aug2025.docx)।</li>
+          <li>विषय, तिथि या प्रोजेक्ट के अनुसार व्यवस्थित करें।</li>
+          <li>महत्वपूर्ण फाइलों का बैकअप बाहरी ड्राइव या क्लाउड पर रखें।</li>
+        </ul>
+
+        <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/File_Manager_icon.svg" alt="फ़ाइल मैनेजर"></div>
+      </div>
+    </section>
+
+    <!-- Chapter 7 -->
+    <section class="card" id="ch7">
+      <h2>⌨️ Chapter 7: Input and Output Devices</h2>
+      <div class="english">
+        <p class="meta"><strong>Overview:</strong> Input devices let users provide data to the computer. Output devices present processed data to the user. Some devices can perform both functions.</p>
+
+        <h3>Input Devices (detailed)</h3>
+        <ul>
+          <li><strong>Keyboard:</strong> Used to type text and commands. Keys include alphabets, numbers, function keys, and special keys (Ctrl, Alt).</li>
+          <li><strong>Mouse:</strong> Pointing device with left/right buttons and a scroll wheel. Used for selecting and interacting with UI elements.</li>
+          <li><strong>Scanner:</strong> Converts printed documents and photos into digital images.</li>
+          <li><strong>Microphone:</strong> Records audio or voice input for applications like voice chat or recording.</li>
+          <li><strong>Webcam:</strong> Captures live video for video calls and recordings.</li>
+        </ul>
+
+        <h3>Output Devices (detailed)</h3>
+        <ul>
+          <li><strong>Monitor:</strong> Displays visual output. Monitors vary by size, resolution (pixels), and type (LCD, LED).</li>
+          <li><strong>Printer:</strong> Creates paper copies of digital documents. Types include inkjet and laser printers.</li>
+          <li><strong>Speakers/Headphones:</strong> Produce audio output such as music or alerts.</li>
+          <li><strong>Projector:</strong> Enlarges computer display onto a screen or wall for presentations.</li>
+        </ul>
+
+        <h3>Combined Devices</h3>
+        <p>Devices like touchscreens act as both input and output — they display content and accept touch input. Multifunction printers can print, scan, and copy.</p>
+
+        <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Computer_keyboard_key_layout.png" alt="Keyboard Layout"></div>
+      </div>
+
+      <div class="hindi">
+        <p class="meta"><strong>ओवरव्यू:</strong> इनपुट डिवाइस उपयोगकर्ताओं को कंप्यूटर में डेटा प्रदान करने देते हैं। आउटपुट डिवाइस प्रोसेस किए गए डेटा को उपयोगकर्ता को दिखाते/प्रदान करते हैं। कुछ डिवाइस दोनों कार्य कर सकते हैं।</p>
+
+        <h3>इनपुट डिवाइस (विस्तार से)</h3>
+        <ul>
+          <li><strong>कीबोर्ड:</strong> टेक्स्ट और कमांड टाइप करने के लिए उपयोग किया जाता है। इसमें अक्षर, नंबर, फंक्शन की और विशेष कुंजियाँ (Ctrl, Alt) शामिल हैं।</li>
+          <li><strong>माउस:</strong> पॉइंटिंग डिवाइस जिसके बाएँ/दाएँ बटन और स्क्रोल व्हील होते हैं। UI के तत्वों के साथ इंटरैक्ट करने के लिए प्रयोग होता है।</li>
+          <li><strong>स्कैनर:</strong> मुद्रित दस्तावेजों और तस्वीरों को डिजिटल इमेज में बदलता है।</li>
+          <li><strong>माइक्रोफोन:</strong> वॉइस या ऑडियो रिकॉर्ड करने के लिए।</li>
+          <li><strong>वेबकैम:</strong> लाइव वीडियो कैप्चर करने के लिए, जैसे वीडियो कॉल्स में।</li>
+        </ul>
+
+        <h3>आउटपुट डिवाइस (विस्तार से)</h3>
+        <ul>
+          <li><strong>मॉनिटर:</strong> विजुअल आउटपुट दिखाता है। मॉनिटर का आकार, रेसोल्यूशन और प्रकार (LCD/LED) अलग-अलग हो सकता है।</li>
+          <li><strong>प्रिंटर:</strong> डिजिटल दस्तावेजों की कागज़ प्रति तैयार करता है। मुख्य प्रकार हैं inkjet और laser printers।</li>
+          <li><strong>स्पीकर्स/हेडफोन:</strong> संगीत और अलर्ट जैसे ऑडियो आउटपुट उत्पन्न करते हैं।</li>
+          <li><strong>प्रोजेक्टर:</strong> प्रस्तुति के लिए कंप्यूटर डिस्प्ले को बड़ी स्क्रीन पर दिखाता है।</li>
+        </ul>
+
+        <h3>संयुक्त डिवाइस</h3>
+        <p>टचस्क्रीन जैसे डिवाइस दोनों तरह का काम करते हैं — वे कंटेंट दिखाते हैं और स्पर्श द्वारा इनपुट स्वीकार करते हैं। मल्टीफ़ंक्शन प्रिंटर प्रिंट, स्कैन और कॉपी कर सकते हैं।</p>
+
+        <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Computer_keyboard_key_layout.png" alt="कीबोर्ड लेआउट"></div>
+      </div>
+    </section>
+
+    <!-- Chapter 8 -->
+    <section class="card" id="ch8">
+      <h2>💾 Chapter 8: Computer Memory</h2>
+      <div class="english">
+        <p class="meta"><strong>Overview:</strong> Memory in computers stores instructions and data. It is divided mainly into primary (fast, temporary) and secondary (slower, permanent) memory.</p>
+
+        <h3>Primary Memory</h3>
+        <ul>
+          <li><strong>RAM (Random Access Memory):</strong> Volatile memory used by the CPU to store data currently in use. Data is lost when power goes off.</li>
+          <li><strong>ROM (Read Only Memory):</strong> Non-volatile memory permanently storing important instructions like BIOS/firmware.</li>
+          <li><strong>Cache Memory:</strong> Very small and fast memory located near the CPU to speed up operations.</li>
+        </ul>
+
+        <h3>Secondary Memory</h3>
+        <p>Includes Hard Disk Drives (HDD), Solid State Drives (SSD), optical disks, and external drives. These store data permanently until deleted.</p>
+
+        <h3>Why Memory Matters</h3>
+        <p>More RAM helps run more applications simultaneously. Faster storage (SSD) improves boot times and application loading.</p>
+
+        <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/RAM_Memory_chip.jpg" alt="RAM Chip"></div>
+      </div>
+
+      <div class="hindi">
+        <p class="meta"><strong>ओवरव्यू:</strong> कंप्यूटर में मेमोरी निर्देशों और डेटा को संग्रहीत करती है। इसे मुख्यतः प्राइमरी (तेज़, अस्थायी) और सेकेंडरी (धीमा, स्थायी) मेमोरी में बाँटा जाता है।</p>
+
+        <h3>प्राइमरी मेमोरी</h3>
+        <ul>
+          <li><strong>RAM (रैंडम एक्सेस मेमोरी):</strong> अस्थायी मेमोरी जिसका उपयोग CPU वर्तमान में उपयोग हो रहे डेटा को रखने के लिए करता है। बिजली बंद होने पर डेटा खो जाता है।</li>
+          <li><strong>ROM (रीड ओनली मेमोरी):</strong> गैर-अस्थायी मेमोरी जो BIOS/फर्मवेयर जैसे महत्वपूर्ण निर्देशों को स्थायी रूप से रखती है।</li>
+          <li><strong>कैश मेमोरी:</strong> CPU के निकट बहुत छोटी और तेज मेमोरी जो ऑपरेशन्स की गति बढ़ाती है।</li>
+        </ul>
+
+        <h3>सेकेंडरी मेमोरी</h3>
+        <p>इसमें HDD, SSD, ऑप्टिकल डिस्क और बाहरी ड्राइव शामिल हैं। ये डेटा को स्थायी रूप से संग्रहीत करते हैं जब तक इसे हटाया न जाए।</p>
+
+        <h3>मेमोरी क्यों महत्वपूर्ण है</h3>
+        <p>अधिक RAM अधिक अनुप्रयोगों को एक साथ चलाने में मदद करता है। तेज़ स्टोरेज (SSD) से सिस्टम तेज़ी से बूट होता है और एप्स जल्दी लोड होते हैं।</p>
+
+        <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/RAM_Memory_chip.jpg" alt="RAM चिप"></div>
+      </div>
+    </section>
+
+    <!-- Chapter 9 -->
+    <section class="card" id="ch9">
+      <h2>💽 Chapter 9: Storage Devices</h2>
+      <div class="english">
+        <p class="meta"><strong>Overview:</strong> Storage devices keep data permanently. They vary by capacity, speed, portability, and durability.</p>
+
+        <h3>Types of Storage</h3>
+        <ul>
+          <li><strong>Hard Disk Drive (HDD):</strong> Magnetic disks, large capacity, cost-effective, mechanical parts.</li>
+          <li><strong>Solid State Drive (SSD):</strong> No moving parts, faster read/write, more expensive per GB than HDD.</li>
+          <li><strong>USB Flash Drives:</strong> Portable, used for quick file transfer.</li>
+          <li><strong>Optical Disks (CD/DVD):</strong> Used for music, videos, and backups (less common now).</li>
+          <li><strong>Memory Cards:</strong> Used in cameras and phones (SD cards, microSD).</li>
+          <li><strong>Cloud Storage:</strong> Online services (Google Drive, OneDrive) accessible from any device with internet.</li>
+        </ul>
+
+        <h3>Choosing Storage</h3>
+        <p>For speed and performance choose SSD. For large, inexpensive storage choose HDD. For portability choose USB drives or cloud storage.</p>
+
+        <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Hard_drive.jpg" alt="Hard Drive"></div>
+      </div>
+
+      <div class="hindi">
+        <p class="meta"><strong>ओवरव्यू:</strong> स्टोरेज डिवाइस डेटा को स्थायी रूप से रखते हैं। इनका चयन क्षमता, गति, पोर्टेबिलिटी और टिकाऊपन पर निर्भर करता है।</p>
+
+        <h3>स्टोरेज के प्रकार</h3>
+        <ul>
+          <li><strong>हार्ड डिस्क ड्राइव (HDD):</strong> मैग्नेटिक डिस्क, बड़ी क्षमता, किफायती, यांत्रिक पार्ट्स के साथ।</li>
+          <li><strong>सॉलिड स्टेट ड्राइव (SSD):</strong> बिना मूविंग पार्ट्स के तेज़ रीड/राइट, GB के हिसाब से महँगा।</li>
+          <li><strong>USB फ्लैश ड्राइव:</strong> पोर्टेबल, फाइल ट्रांसफर के लिए उपयोगी।</li>
+          <li><strong>ऑप्टिकल डिस्क (CD/DVD):</strong> संगीत, वीडियो और बैकअप के लिए (आजकल कम उपयोग होते हैं)।</li>
+          <li><strong>मेमोरी कार्ड:</strong> कैमरा और फोन में उपयोग होते हैं (SD, microSD)।</li>
+          <li><strong>क्लाउड स्टोरेज:</strong> इंटरनेट के जरिए उपलब्ध सेवाएँ (Google Drive, OneDrive)।</li>
+        </ul>
+
+        <h3>स्टोरेज का चयन कैसे करें</h3>
+        <p>स्पीड और प्रदर्शन के लिए SSD चुनें। बड़ी और सस्ती स्टोरेज के लिए HDD। पोर्टेबिलिटी के लिए USB ड्राइव या क्लाउड स्टोरेज चुनें।</p>
+
+        <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Hard_drive.jpg" alt="हार्ड ड्राइव"></div>
+      </div>
+    </section>
+
+    <!-- Chapter 10 -->
+    <section class="card" id="ch10">
+      <h2>🧠 Chapter 10: Computer Languages</h2>
+      <div class="english">
+        <p class="meta"><strong>Overview:</strong> Computer languages let developers write instructions that computers can execute. They range from low-level machine code to high-level languages.</p>
+
+        <h3>Machine Language</h3>
+        <p>The lowest level language consisting of binary digits (0 and 1). It is directly understood by the CPU but hard for humans to read/write.</p>
+
+        <h3>Assembly Language</h3>
+        <p>Uses symbolic instructions (mnemonics) instead of binary. An assembler converts assembly to machine code.</p>
+
+        <h3>High-Level Languages</h3>
+        <p>Languages like Python, Java, C++ are closer to human language. They allow building complex applications and are translated using compilers or interpreters.</p>
+
+        <h3>Web Languages</h3>
+        <p>HTML, CSS, and JavaScript are used to create webpages: HTML for structure, CSS for styling, and JavaScript for interactivity.</p>
+
+        <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/C_Programming_Language.svg" alt="Programming"></div>
+      </div>
+
+      <div class="hindi">
+        <p class="meta"><strong>ओवरव्यू:</strong> कंप्यूटर भाषाओं के माध्यम से डेवलपर्स वे निर्देश लिखते हैं जिन्हें कंप्यूटर निष्पादित कर सकते हैं। ये मशीन कोड से लेकर हाई-लेवल भाषाओं तक विस्तृत होती हैं।</p>
+
+        <h3>मशीन भाषा</h3>
+        <p>सबसे निचला स्तर — बाइनरी (0 और 1)। CPU इसे सीधे समझता है, लेकिन मानव के लिए पढ़ना/लिखना कठिन है।</p>
+
+        <h3>असेंबली भाषा</h3>
+        <p>बाइनरी के स्थान पर प्रतीकात्मक निर्देश (mnemonics) का उपयोग करती है। असेंबलर इसे मशीन कोड में बदलता है।</p>
+
+        <h3>हाई-लेवल भाषाएँ</h3>
+        <p>Python, Java, C++ जैसी भाषाएँ मानव के करीब होती हैं और जटिल एप्लिकेशन बनाने देती हैं। इन्हें कंपाइलर/इंटरप्रेटर द्वारा मशीन भाषा में बदला जाता है।</p>
+
+        <h3>वेब भाषाएँ</h3>
+        <p>HTML, CSS, JavaScript वेब पेज बनाने के लिए उपयोग होती हैं: HTML संरचना, CSS स्टाइल, JavaScript इंटरएक्टिविटी के लिए।</p>
+
+        <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/C_Programming_Language.svg" alt="प्रोग्रामिंग"></div>
+      </div>
+    </section>
+
+    <!-- Chapter 11 -->
+    <section class="card" id="ch11">
+      <h2>🌍 Chapter 11: Internet &amp; Email</h2>
+      <div class="english">
+        <p class="meta"><strong>Overview:</strong> The Internet is a global network of connected computers that share information and services. Email (electronic mail) is a primary service to exchange messages.</p>
+
+        <h3>How the Internet Works (basic)</h3>
+        <p>Computers connect to each other via networks and use protocols (rules) like TCP/IP to communicate. Websites are hosted on servers and accessed via URLs.</p>
+
+        <h3>Web Browser and Websites</h3>
+        <p>Browsers (Chrome, Firefox) retrieve webpages and display them. A website is a collection of web pages; a URL points to a specific page.</p>
+
+        <h3>Email Fundamentals</h3>
+        <ul>
+          <li>Create an email account with a provider (Gmail, Outlook).</li>
+          <li>Compose: Enter recipient address, subject, write message, attach files if needed, and send.</li>
+          <li>Folders: Inbox, Sent, Drafts, Spam.</li>
+        </ul>
+
+        <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Internet_globe_icon.png" alt="Internet"></div>
+      </div>
+
+      <div class="hindi">
+        <p class="meta"><strong>ओवरव्यू:</strong> इंटरनेट कंप्यूटरों का वैश्विक नेटवर्क है जो जानकारी और सेवाएँ साझा करता है। ईमेल संदेशों के आदान-प्रदान की एक प्रमुख सेवा है।</p>
+
+        <h3>इंटरनेट कैसे काम करता है (सरल)</h3>
+        <p>कंप्यूटर नेटवर्क के माध्यम से जुड़े होते हैं और संचार के लिए TCP/IP जैसे प्रोटोकॉल का उपयोग करते हैं। वेबसाइट सर्वरों पर होस्ट होती हैं और URL के माध्यम से एक्सेस की जाती हैं।</p>
+
+        <h3>वेब ब्राउज़र और वेबसाइट</h3>
+        <p>ब्राउज़र (Chrome, Firefox) वेबपेज प्राप्त करते हैं और उन्हें दिखाते हैं। एक वेबसाइट वेब पृष्ठों का संग्रह है; URL एक विशिष्ट पृष्ठ की पहचान करता है।</p>
+
+        <h3>ईमेल बुनियादी जानकारी</h3>
+        <ul>
+          <li>ईमेल प्रदाता (Gmail, Outlook) से खाता बनाएं।</li>
+          <li>Compose: प्राप्तकर्ता का पता डालें, विषय लिखें, संदेश टाइप करें, आवश्यक हो तो फाइल संलग्न करें और भेजें।</li>
+          <li>फ़ोल्डर: Inbox, Sent, Drafts, Spam।</li>
+        </ul>
+
+        <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Internet_globe_icon.png" alt="इंटरनेट"></div>
+      </div>
+    </section>
+
+    <!-- Chapter 12 -->
+    <section class="card" id="ch12">
+      <h2>🛡️ Chapter 12: Cyber Safety</h2>
+      <div class="english">
+        <p class="meta"><strong>Overview:</strong> Cyber safety refers to practices that protect people and devices from internet threats such as malware, scams, identity theft, and cyberbullying.</p>
+
+        <h3>Key Safety Rules</h3>
+        <ul>
+          <li>Use strong passwords (mix of letters, numbers, symbols) and do not share them.</li>
+          <li>Keep software and operating systems updated to patch security vulnerabilities.</li>
+          <li>Install and run reputable antivirus and firewall software.</li>
+          <li>Avoid clicking unknown links or downloading attachments from untrusted sources.</li>
+          <li>Be careful with what you share on social media — your digital footprint lasts long.</li>
+          <li>Report cyberbullying or suspicious activity to a trusted adult or authority.</li>
+        </ul>
+
+        <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Cybersecurity.png" alt="Cyber Safety"></div>
+      </div>
+
+      <div class="hindi">
+        <p class="meta"><strong>ओवरव्यू:</strong> साइबर सुरक्षा उन आदतों और प्रथाओं को दर्शाती है जो इंटरनेट खतरों जैसे मैलवेयर, स्कैम, पहचान की चोरी और साइबर बुलिंग से लोगों और उपकरणों की रक्षा करती हैं।</p>
+
+        <h3>मुख्य सुरक्षा नियम</h3>
+        <ul>
+          <li>मजबूत पासवर्ड का उपयोग करें (अक्षरों, संख्याओं और प्रतीकों का मिश्रण) और इन्हें साझा न करें।</li>
+          <li>सुरक्षा कमजोरियों को ठीक करने के लिए सॉफ़्टवेयर और ऑपरेटिंग सिस्टम अपडेट रखें।</li>
+          <li>प्रसिद्ध एंटीवायरस और फ़ायरवॉल सॉफ़्टवेयर स्थापित करें और चलाएँ।</li>
+          <li>अविश्वसनीय स्रोतों से अटैचमेंट या अनजान लिंक पर क्लिक न करें।</li>
+          <li>सोशल मीडिया पर जो आप साझा करते हैं उसके प्रति सतर्क रहें — आपकी डिजिटल उपस्थिति स्थायी हो सकती है।</li>
+          <li>साइबर बुलिंग या संदिग्ध गतिविधियों की सूचना किसी विश्वसनीय वयस्क या प्राधिकरण को दें।</li>
+        </ul>
+
+        <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/7/73/Cybersecurity.png" alt="साइबर सुरक्षा"></div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 RMS Govindpur — Class 6 Computer (Complete Bilingual Notes)</p>
+  </footer>
+
+  <script>
+    // language toggle logic: default English visible, Hindi hidden
+    const toggleBtn = document.getElementById('toggleBtn');
+    let hindiVisible = false;
+    function toggleLanguage(){
+      hindiVisible = !hindiVisible;
+      document.querySelectorAll('.hindi').forEach(el=>el.style.display = hindiVisible? 'block':'none');
+      toggleBtn.textContent = hindiVisible? 'Switch to English' : 'Switch to हिंदी';
+      // scroll to top of page when toggled for better UX
+      window.scrollTo({top:0,behavior:'smooth'});
+    }
+  </script>
+</body>
+
+</html>

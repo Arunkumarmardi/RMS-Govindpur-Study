@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RMS Govindpur - Home</title>
+  <style>
+    /* Basic Reset and Font */
+    body {
+      font-family: "Poppins", Arial, sans-serif;
+      margin: 0;
+      background: linear-gradient(100deg, red, rgb(167, 167, 75), blue, green, rgb(46, 175, 158), #222, #053064);
+      color: #222;
+    }
+
+    /* Header */
+    header {
+      background: linear-gradient(40deg, #5e6b15, #613bd3, #879bc3, #ffde59, #1b0e0e);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    }
+
+    header h1 {
+      font-size: 2.5em;
+      margin: 0;
+    }
+
+    header p {
+      font-size: 1.1em;
+    }
+
+    /* Navigation Bar */
+    nav {
+      background: #111;
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 15px 25px;
+      font-weight: 600;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    nav a:hover {
+      background: #00c6ff;
+      color: #fff;
+    }
+
+    /* Hero Section */
+    .hero {
+      background: url("Assets/img/img2.png") center/cover no-repeat;
+      color: white;
+      text-align: center;
+      padding: 120px 20px;
+      position: relative;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: rgba(0, 0, 0, 0.45);
+    }
+
+    .hero h2 {
+      position: relative;
+      font-size: 2.8em;
+      margin: 0;
+      color: greenyellow;
+      -webkit-text-stroke: 1px #583232;
+    }
+
+    .hero p {
+      position: relative;
+      font-size: 1.3em;
+      margin-top: 10px;
+    }
+
+    .hero button {
+      position: relative;
+      background: #00c6ff;
+      border: none;
+      color: white;
+      font-size: 1em;
+      padding: 12px 24px;
+      border-radius: 30px;
+      margin-top: 25px;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .hero button:hover {
+      background: #0072ff;
+    }
+
+    /* Classes Section */
+    .classes {
+      max-width: 1100px;
+      margin: 60px auto;
+      text-align: center;
+    }
+
+    .classes h2 {
+      font-size: 2em;
+      color: #0072ff;
+      margin-bottom: 20px;
+    }
+
+    .class-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+      padding: 20px;
+    }
+
+    .class-card {
+      border-radius: 15px;
+      padding: 25px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .class-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .class-card img {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 10px;
+    }
+
+    .class-card a {
+      text-decoration: none;
+      color: #0072ff;
+      font-weight: 600;
+      display: inline-block;
+      margin-top: 10px;
+    }
+
+    .class-card h3 {
+      color: yellow;
+      font-size: 30px;
+      background-color: darkcyan;
+      border-radius: 4px;
+      background-size: contain;
+    }
+
+    .Subjects {
+      background-color: rgb(95, 253, 51);
+      border-radius: 4px;
+      width: 50%;
+      height: 30px;
+      align-content: center;
+    }
+
+    .Subjects:hover {
+      background-color: rgb(8, 11, 20);
+      color: #ffde59;
+      border-radius: 4px;
+      width: 50%;
+      transition: background 0.4s;
+      transform: scale(1.03);
+    }
+
+    #six {
+      background: url("Assets/img/img28.png");
+      background-size: cover;
+    }
+
+    #seven {
+      background: url("Assets/img/img33.png");
+      background-size: cover;
+    }
+
+    #eight {
+      background: url("Assets/img/img34.png");
+      background-size: cover;
+    }
+
+    #vid {
+      position: absolute;
+      height: 288px;
+      opacity: 0.9;
+      margin-left: 340px;
+    }
+
+    /* About Section */
+    .about {
+      background: linear-gradient(180deg, #65530b, #b516fe, #ffde59);
+      color: rgb(251, 248, 248);
+      text-align: center;
+      padding: 60px 20px;
+      opacity: 0.5;
+      position: relative;
+    }
+
+    .about h2 {
+      color: rgb(253, 255, 255);
+      font-size: 2em;
+      margin-bottom: 20px;
+    }
+
+    .about p {
+      max-width: 800px;
+      margin: auto;
+      font-size: 1.1em;
+      line-height: 1.6;
+    }
+
+    /* Gallery Section */
+    .gallery {
+      max-width: 1100px;
+      margin: 60px auto;
+      text-align: center;
+      background: url("Assets/img/img33.png");
+      border-radius: 4px;
+    }
+
+    .gallery h2 {
+      font-size: 2em;
+      color: #0072ff;
+      margin-bottom: 20px;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+    }
+
+    .gallery-grid img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+      transition: transform 0.3s;
+      outline-style: solid;
+      outline-width: 4px;
+      outline-color: yellow;
+    }
+
+    .gallery-grid img:hover {
+      transform: scale(1.5);
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(45deg, #b516fe, #5e6b15, #222);
+      color: white;
+      text-align: center;
+      padding: 20px;
+      margin-top: 60px;
+    }
+
+    footer a {
+      color: #fff;
+      text-decoration: underline;
+    }
+
+    footer a:hover {
+      color: #ffde59;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      .hero h2 {
+        font-size: 2em;
+      }
+
+      .hero p {
+        font-size: 1em;
+      }
+
+      nav a {
+        padding: 12px 15px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Header -->
+  <header>
+    <h1>RMS Govindpur</h1>
+    <p>Rising Minds School | Learn • Explore • Grow</p>
+  </header>
+
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="study-materials.html">Study Materials</a>
+    <a href="about.html">About</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <h2>Welcome to RMS Govindpur</h2>
+    <p>Empowering students with knowledge, creativity, and discipline.</p>
+    <button onclick="window.location.href='study-materials.html'">Explore Study Materials
+    </button>
+  </section>
+
+  <!-- Classes Section -->
+  <section class="classes">
+    <h2>📘 Our Classes</h2>
+    <div class="class-grid">
+      <div class="class-card" id="six">
+        <img src="https://cdn-icons-png.flaticon.com/512/3187/3187880.png" alt="Class 6">
+        <h3>Class 6</h3>
+        <a href="study-materials.html" class="Subjects">View Subjects</a>
+      </div>
+      <div class="class-card" id="seven">
+        <img src="https://cdn-icons-png.flaticon.com/512/3187/3187886.png" alt="Class 7">
+        <h3>Class 7</h3>
+        <a href="study-materials.html" class="Subjects">View Subjects</a>
+      </div>
+      <div class="class-card" id="eight">
+        <img src="https://cdn-icons-png.flaticon.com/512/3187/3187879.png" alt="Class 8">
+        <h3>Class 8</h3>
+        <a href="study-materials.html" class="Subjects">View Subjects</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+   <video controls width="600" loop id="vid">
+    <source src="Assets/img/vid6.mp4" type="video/mp4">
+   </video>
+  <section class="about">
+    <h2>About Our School</h2>
+    <p>
+      RMS Govindpur is a center of excellence in education and character building.
+      Our mission is to create an environment that nurtures curiosity, values discipline,
+      and encourages students to explore their true potential in academics and beyond.
+    </p>
+  </section>
+
+  <!-- Gallery Section -->
+  <section class="gallery">
+    <h2>🏫 School Life</h2>
+    <div class="gallery-grid">
+      <img src="Assets/img/img19.jpeg" alt="Students">
+      <img src="Assets/img/img12.jpeg" alt="Teacher">
+      <img src="Assets/img/img23.jpeg" alt="Campus">
+      <img src="Assets/img/img11.jpeg" alt="Classroom">
+      <img src="Assets/img/img7.jpeg" alt="Students">
+      <img src="Assets/img/img20.jpeg" alt="Teacher">
+      <img src="Assets/img/img14.jpeg" alt="Campus">
+      <img src="Assets/img/img16.jpeg" alt="Classroom">
+      <img src="Assets/img/img17.jpeg" alt="Students">
+      <img src="Assets/img/img21.jpeg" alt="Teacher">
+      <img src="Assets/img/img25.jpeg" alt="Campus">
+      <img src="Assets/img/img26.jpeg" alt="Classroom">
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 RMS Govindpur | Designed with ❤️ for Education</p>
+    <p><a href="contact.html">Contact Us</a> | <a href="about.html">Know More</a></p>
+  </footer>
+
+</body>
+
+</html>
