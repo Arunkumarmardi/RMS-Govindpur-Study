@@ -1,0 +1,147 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Chapter 2 - Hardware & Software</title>
+<style>
+  /* same minimal styling as chapter1 for consistency */
+  :root{--accent:#1b6fb0;--bg:#f7fbff}
+  body{font-family:Arial,Helvetica,sans-serif;margin:0;background:var(--bg);color:#123;line-height:1.5}
+  header{background:linear-gradient(90deg,#4b9df8,#97d7ff);color:#fff;padding:18px;text-align:center}
+  main{max-width:920px;margin:18px auto;padding:18px}
+  .card{background:#fff;border-left:6px solid var(--accent);padding:18px;margin:14px 0;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+  h1,h2{margin:0 0 10px;color:var(--accent)}
+  .controls{display:flex;justify-content:flex-end;gap:10px;margin-bottom:12px}
+  .lang-toggle{background:var(--accent);color:#fff;padding:8px 12px;border-radius:6px;border:none;cursor:pointer;font-weight:700}
+  .img-ref{text-align:center;margin-top:12px}
+  .img-ref img{max-width:100%;height:auto;border-radius:8px}
+  .hindi{display:none}
+  .quiz{margin-top:14px;padding:12px;background:#f4f8ff;border-radius:8px}
+  .q{margin:12px 0}
+  .btn-check{background:#1b6fb0;color:#fff;padding:8px 12px;border:none;border-radius:6px;cursor:pointer}
+  .result{margin-top:10px;padding:10px;border-radius:6px;background:#fffef6;border-left:4px solid #ffcc33}
+  label.option{display:block;padding:6px;border-radius:6px;border:1px solid #e6f1ff;margin:6px 0;cursor:pointer}
+  small.explain{display:block;margin-left:18px;color:#234;margin-top:6px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Class 6 — Computer</h1>
+  <p>Chapter 2 — Hardware & Software</p>
+</header>
+
+<main>
+  <div class="controls">
+    <button id="toggleBtn" class="lang-toggle" onclick="toggleLanguage()">Switch to हिंदी</button>
+  </div>
+
+  <section class="card">
+    <h2>🔧 Hardware & Software</h2>
+
+    <div class="english">
+      <p class="meta"><strong>Hardware</strong> - physical components you can touch (CPU, motherboard, monitor). <strong>Software</strong> - programs and instructions that run on hardware (operating systems, applications).</p>
+
+      <h3>Software Types</h3>
+      <ul>
+        <li>System Software (Operating System)</li>
+        <li>Application Software (Word processors, browsers)</li>
+        <li>Utility Software (Antivirus, disk tools)</li>
+      </ul>
+
+      <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Computer_hardware_components.jpg" alt="Hardware"></div>
+    </div>
+
+    <div class="hindi">
+      <p class="meta"><strong>हार्डवेयर</strong> - वे भौतिक घटक जिन्हें आप छू सकते हैं (CPU, मदरबोर्ड, मॉनिटर)। <strong>सॉफ्टवेयर</strong> - प्रोग्राम और निर्देश जो हार्डवेयर पर चलते हैं (OS, एप्लिकेशन)।</p>
+
+      <h3>सॉफ्टवेयर प्रकार</h3>
+      <ul>
+        <li>सिस्टम सॉफ्टवेयर (OS)</li>
+        <li>एप्लिकेशन सॉफ्टवेयर (वर्ड प्रोसेसर, ब्राउज़र)</li>
+        <li>यूटिलिटी सॉफ्टवेयर (एंटीवायरस)</li>
+      </ul>
+
+      <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Computer_hardware_components.jpg" alt="हार्डवेयर"></div>
+    </div>
+
+    <!-- Quiz (10 questions) -->
+    <div class="quiz" id="quiz2">
+      <h3>Chapter 2 Quiz — 10 Questions</h3>
+      <div id="questions2"></div>
+      <button class="btn-check" onclick="checkAnswers2()">Check Answers</button>
+      <div id="score2" class="result" style="display:none"></div>
+    </div>
+
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 RMS Govindpur — Chapter 2</p>
+</footer>
+
+<script>
+let hindiVisible=false;
+function toggleLanguage(){
+  hindiVisible = !hindiVisible;
+  document.querySelectorAll('.hindi').forEach(e=> e.style.display = hindiVisible ? 'block':'none');
+  document.querySelectorAll('.english').forEach(e=> e.style.display = hindiVisible ? 'none':'block');
+  document.getElementById('toggleBtn').textContent = hindiVisible ? 'Switch to English' : 'Switch to हिंदी';
+  renderQuestions2();
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+
+/* Questions data for chapter 2 */
+const data2 = [
+  {q_en:'Which software manages the computer hardware?', options_en:['Word Processor','Operating System','Antivirus','Browser'], ans:1, exp_en:'OS manages hardware and software resources.', q_hi:'कौन सा सॉफ्टवेयर हार्डवेयर को प्रबंधित करता है?', options_hi:['वर्ड प्रोसेसर','ऑपरेटिंग सिस्टम','एंटीवायरस','ब्राउज़र'], exp_hi:'OS हार्डवेयर व सॉफ्टवेयर संसाधनों का प्रबंधन करता है।'},
+  {q_en:'Which is an application software?', options_en:['Windows','MS Word','BIOS','RAM'], ans:1, exp_en:'MS Word is an application.', q_hi:'कौन सा एप्लिकेशन सॉफ़्टवेयर है?', options_hi:['Windows','MS Word','BIOS','RAM'], exp_hi:'MS Word एक एप्लिकेशन है।'},
+  {q_en:'True or False: Hardware can be touched physically.', options_en:['True','False'], ans:0, exp_en:'Hardware is physical and touchable.', q_hi:'सही या गलत: हार्डवेयर को शारीरिक रूप से छूया जा सकता है।', options_hi:['सही','गलत'], exp_hi:'हार्डवेयर भौतिक होता है।'},
+  {q_en:'Which device is hardware?', options_en:['Browser','Printer','PDF File','Spreadsheet'], ans:1, exp_en:'Printer is a physical device (hardware).', q_hi:'कौन सा डिवाइस हार्डवेयर है?', options_hi:['ब्राउज़र','प्रिंटर','PDF फाइल','स्प्रेडशीट'], exp_hi:'प्रिंटर भौतिक डिवाइस है।'},
+  {q_en:'Utility software is used for?', options_en:['Playing games','System maintenance','Writing documents','Browsing web'], ans:1, exp_en:'Utility tools help maintain the system.', q_hi:'यूटिलिटी सॉफ्टवेयर किसके लिए है?', options_hi:['गेम खेलना','सिस्टम मेंटेनेंस','दस्तावेज़ लिखना','वेब ब्राउज़ करना'], exp_hi:'यूटिलिटी सिस्टम को मेंटेन करने में मदद करते हैं।'},
+  {q_en:'Which of these is not software?', options_en:['Excel','Keyboard','Chrome','Paint'], ans:1, exp_en:'Keyboard is hardware, not software.', q_hi:'इनमें से कौन सॉफ़्टवेयर नहीं है?', options_hi:['Excel','कीबोर्ड','Chrome','Paint'], exp_hi:'कीबोर्ड हार्डवेयर है।'},
+  {q_en:'An example of system software is:', options_en:['Notepad','Windows','PowerPoint','Photoshop'], ans:1, exp_en:'Windows is a system software (OS).', q_hi:'सिस्टम सॉफ्टवेयर का उदाहरण है:', options_hi:['Notepad','Windows','PowerPoint','Photoshop'], exp_hi:'Windows एक सिस्टम सॉफ़्टवेयर है।'},
+  {q_en:'Which software helps to remove viruses?', options_en:['Word','Antivirus','Paint','Calculator'], ans:1, exp_en:'Antivirus scans and removes malware.', q_hi:'कौन सा सॉफ़्टवेयर वायरस हटाने में मदद करता है?', options_hi:['Word','एंटीवायरस','पेंट','कैलकुलेटर'], exp_hi:'एंटीवायरस मैलवेयर हटाता है।'},
+  {q_en:'Which one is needed to run applications?', options_en:['CPU','Monitor','Printer','Scanner'], ans:0, exp_en:'CPU executes applications.', q_hi:'ऐप्लिकेशन चलाने के लिए क्या चाहिए?', options_hi:['CPU','मॉनिटर','प्रिंटर','स्कैनर'], exp_hi:'CPU एप्लिकेशन निष्पादित करता है।'},
+  {q_en:'True or False: Software can be touched physically.', options_en:['True','False'], ans:1, exp_en:'Software is intangible; it cannot be touched.', q_hi:'सही या गलत: सॉफ्टवेयर को शारीरिक रूप से छूया जा सकता है।', options_hi:['सही','गलत'], exp_hi:'सॉफ्टवेयर अठangible (नॉन-फिजिकल) होता है।'}
+];
+
+function renderQuestions2(){
+  const qdiv = document.getElementById('questions2');
+  const useHindi = hindiVisible;
+  qdiv.innerHTML='';
+  data2.forEach((it,i)=>{
+    const q = useHindi? it.q_hi: it.q_en;
+    const opts = useHindi? it.options_hi: it.options_en;
+    const div = document.createElement('div'); div.className='q';
+    let html = `<strong>${i+1}. ${q}</strong><div>`;
+    opts.forEach((o,idx)=> html += `<label class="option"><input type="radio" name="q2_${i}" value="${idx}"> ${o}</label>`);
+    html += `</div><div id="exp2_${i}" style="display:none"><small class="explain"></small></div>`;
+    div.innerHTML = html;
+    qdiv.appendChild(div);
+  });
+}
+renderQuestions2();
+
+function checkAnswers2(){
+  let score=0;
+  const useHindi = hindiVisible;
+  data2.forEach((it,i)=>{
+    const sel = document.querySelector(`input[name="q2_${i}"]:checked`);
+    const expDiv = document.getElementById(`exp2_${i}`);
+    const expText = useHindi? it.exp_hi: it.exp_en;
+    if(sel){
+      const val = parseInt(sel.value,10);
+      if(val===it.ans) score++;
+      expDiv.querySelector('.explain').textContent = (val===it.ans? (useHindi?'सही — ':'Correct — '): (useHindi?'गलत — ':'Incorrect — ')) + expText;
+    } else {
+      expDiv.querySelector('.explain').textContent = (useHindi?'उत्तर नहीं दिया — ':'No answer — ') + expText;
+    }
+    expDiv.style.display='block';
+  });
+  document.getElementById('score2').style.display='block';
+  document.getElementById('score2').innerHTML = useHindi? `<strong>आपका स्कोर: ${score}/${data2.length}</strong>`:`<strong>Your Score: ${score}/${data2.length}</strong>`;
+  window.scrollTo({top:document.getElementById('quiz2').offsetTop,behavior:'smooth'});
+}
+</script>
+
+</body>
+</html>

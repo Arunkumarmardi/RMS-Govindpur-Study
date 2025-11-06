@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Chapter 6 - File Management</title>
+<style>
+  :root{--accent:#1b6fb0;--bg:#f7fbff}
+  body{font-family:Arial,Helvetica,sans-serif;margin:0;background:var(--bg);color:#123}
+  header{background:linear-gradient(90deg,#4b9df8,#97d7ff);color:#fff;padding:18px;text-align:center}
+  main{max-width:920px;margin:18px auto;padding:18px}
+  .card{background:#fff;border-left:6px solid var(--accent);padding:18px;margin:14px 0;border-radius:8px}
+  .controls{display:flex;justify-content:flex-end}
+  .lang-toggle{background:var(--accent);color:#fff;padding:8px 12px;border-radius:6px;border:none;cursor:pointer}
+  .hindi{display:none}
+  .quiz{background:#f4f8ff;padding:12px;border-radius:8px;margin-top:12px}
+  label.option{display:block;padding:6px;border-radius:6px;border:1px solid #e6f1ff;margin:6px 0}
+</style>
+</head>
+<body>
+<header><h1>Class 6 — Computer</h1><p>Chapter 6 — File Management</p></header>
+<main>
+  <div class="controls"><button id="toggleBtn" class="lang-toggle" onclick="toggleLanguage()">Switch to हिंदी</button></div>
+  <section class="card">
+    <h2>📁 File Management — Organize & Store</h2>
+    <div class="english">
+      <p>Files store data; folders organize files. Use meaningful names and back up important files to external drives or cloud storage.</p>
+      <ul>
+        <li>Create, rename, move, copy, delete files and folders.</li>
+        <li>File extensions indicate type (.docx, .jpg, .mp3).</li>
+      </ul>
+      <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/File_Manager_icon.svg" alt="File Manager"></div>
+    </div>
+    <div class="hindi">
+      <p>फाइलें डेटा स्टोर करती हैं; फ़ोल्डर फाइलों को व्यवस्थित करते हैं। अर्थपूर्ण नाम रखें और महत्वपूर्ण फाइलों का बैकअप लें।</p>
+      <ul>
+        <li>फाइल/फोल्डर बनाना, नाम बदलना, स्थानांतरण, नकल, हटाना।</li>
+        <li>फाइल एक्सटेंशन प्रकार बताते हैं (.docx, .jpg)।</li>
+      </ul>
+      <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/File_Manager_icon.svg" alt="फ़ाइल मैनेजर"></div>
+    </div>
+
+    <div class="quiz" id="quiz6">
+      <h3>Chapter 6 Quiz — 10 Questions</h3>
+      <div id="questions6"></div>
+      <button class="btn-check" onclick="check6()">Check Answers</button>
+      <div id="score6" class="result" style="display:none"></div>
+    </div>
+  </section>
+</main>
+<footer style="text-align:center;padding:12px;background:#1b6fb0;color:#fff;margin-top:18px">&copy; 2025 RMS Govindpur — Chapter 6</footer>
+
+<script>
+let hindiVisible=false;
+function toggleLanguage(){hindiVisible=!hindiVisible;document.querySelectorAll('.hindi').forEach(e=>e.style.display=hindiVisible?'block':'none');document.querySelectorAll('.english').forEach(e=>e.style.display=hindiVisible?'none':'block');document.getElementById('toggleBtn').textContent=hindiVisible?'Switch to English':'Switch to हिंदी'; render6();}
+
+const data6=[
+ {q_en:'What does a folder do?', options_en:['Deletes files','Organizes files','Edits files','Compresses files'], ans:1, exp_en:'Folder helps organize files.', q_hi:'फ़ोल्डर क्या करता है?', options_hi:['फाइलें हटाता है','फाइलें व्यवस्थित करता है','फाइलें संपादित करता है','फाइलें compress करता है'], exp_hi:'फ़ोल्डर फाइलें व्यवस्थित करता है।'},
+ {q_en:'Which extension is image?', options_en:['.docx','.jpg','.mp3','.xlsx'], ans:1, exp_en:'.jpg is an image format.', q_hi:'कौन सा एक्सटेंशन इमेज है?', options_hi:['.docx','.jpg','.mp3','.xlsx'], exp_hi:'.jpg इमेज फॉर्मैट है।'},
+ {q_en:'True or False: Recycle Bin can restore deleted files until emptied.', options_en:['True','False'], ans:0, exp_en:'Files remain in Recycle Bin until it is emptied.', q_hi:'सही या गलत: Recycle Bin से फाइलें Restore हो सकती हैं जब तक इसे खाली ना किया जाये।', options_hi:['सही','गलत'], exp_hi:'Recycle Bin तब तक फाइलें रखता है जब तक empty न किया जाए।'},
+ {q_en:'Which key combination copies files?', options_en:['Ctrl+V','Ctrl+C','Ctrl+X','Ctrl+S'], ans:1, exp_en:'Ctrl+C is copy.', q_hi:'कौन सा कुंजी संयोजन फाइल्स कॉपी करता है?', options_hi:['Ctrl+V','Ctrl+C','Ctrl+X','Ctrl+S'], exp_hi:'Ctrl+C कॉपी करता है।'},
+ {q_en:'What is the best naming practice?', options_en:['random names','meaningful descriptive names','same name for all','no name'], ans:1, exp_en:'Meaningful names help find files quickly.', q_hi:'बेहतरीन नामकरण प्रथा क्या है?', options_hi:['रैंडम नाम','अर्थपूर्ण नाम','सबका एक ही नाम','कोई नाम नहीं'], exp_hi:'अर्थपूर्ण नाम फाइल ढूँढना आसान बनाते हैं।'},
+ {q_en:'True or False: Backing up files prevents permanent loss.', options_en:['True','False'], ans:0, exp_en:'Backups protect from accidental loss.', q_hi:'सही या गलत: फाइलों का बैकअप स्थायी नुकसान से बचाता है।', options_hi:['सही','गलत'], exp_hi:'बैकअप आकस्मिक नुकसान से बचाते हैं।'},
+ {q_en:'Which is cloud storage?', options_en:['Google Drive','Notepad','Calculator','Paint'], ans:0, exp_en:'Google Drive is cloud storage.', q_hi:'कौन सी क्लाउड स्टोरेज है?', options_hi:['Google Drive','Notepad','Calculator','Paint'], exp_hi:'Google Drive क्लाउड स्टोरेज है।'},
+ {q_en:'Which indicates file type?', options_en:['File size','File extension','Creation date','Owner name'], ans:1, exp_en:'Extension shows the type (.pdf, .docx).', q_hi:'कौन सी चीज़ फाइल प्रकार दर्शाती है?', options_hi:['फाइल साइज','फाइल एक्सटेंशन','निर्माण तिथि','मालिक का नाम'], exp_hi:'एक्सटेंशन (.pdf, .docx) फाइल प्रकार बताती है।'},
+ {q_en:'How to permanently delete immediately?', options_en:['Delete key','Shift+Delete','Ctrl+C','Ctrl+V'], ans:1, exp_en:'Shift+Delete removes without Recycle Bin.', q_hi:'तुरंत स्थायी रूप से हटाने के लिए क्या करें?', options_hi:['Delete कुंजी','Shift+Delete','Ctrl+C','Ctrl+V'], exp_hi:'Shift+Delete से Recycle Bin के बिना हटता है।'},
+ {q_en:'True or False: Organizing by folders helps study and revision.', options_en:['True','False'], ans:0, exp_en:'Organized files save time and improve efficiency.', q_hi:'सही या गलत: फोल्डरों से व्यवस्थित करने से अध्ययन व रिवीजन में मदद मिलती है।', options_hi:['सही','गलत'], exp_hi:'व्यवस्थित फाइलें समय बचाती हैं और मदद करती हैं।'}
+];
+
+function render6(){ const qdiv=document.getElementById('questions6'); qdiv.innerHTML=''; const useHindi=hindiVisible;
+ data6.forEach((it,i)=>{ const q=useHindi?it.q_hi:it.q_en; const opts=useHindi?it.options_hi:it.options_en; const div=document.createElement('div'); div.className='q'; let html=`<strong>${i+1}. ${q}</strong><div>`; opts.forEach((o,idx)=> html+=`<label class="option"><input type="radio" name="q6_${i}" value="${idx}"> ${o}</label>`); html+=`</div><div id="exp6_${i}" style="display:none"><small class="explain"></small></div>`; div.innerHTML=html; qdiv.appendChild(div); });
+}
+render6();
+
+function check6(){ let score=0; const useHindi=hindiVisible;
+ data6.forEach((it,i)=>{ const sel=document.querySelector(`input[name="q6_${i}"]:checked`); const expDiv=document.getElementById(`exp6_${i}`); const expText=useHindi?it.exp_hi:it.exp_en; if(sel){ const val=parseInt(sel.value,10); if(val===it.ans) score++; expDiv.querySelector('.explain').textContent=(val===it.ans? (useHindi?'सही — ':'Correct — '):(useHindi?'गलत — ':'Incorrect — ')) + expText; } else expDiv.querySelector('.explain').textContent=(useHindi?'उत्तर नहीं दिया — ':'No answer — ') + expText; expDiv.style.display='block'; }); document.getElementById('score6').style.display='block'; document.getElementById('score6').innerHTML = hindiVisible? `<strong>आपका स्कोर: ${score}/${data6.length}</strong>`:`<strong>Your Score: ${score}/${data6.length}</strong>`; window.scrollTo({top:document.getElementById('quiz6').offsetTop,behavior:'smooth'}); }
+</script>
+</body>
+</html>

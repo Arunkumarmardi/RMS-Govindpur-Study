@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Chapter 4 - Internet Safety</title>
+<style>
+  :root{--accent:#1b6fb0;--bg:#f7fbff}
+  body{font-family:Arial,Helvetica,sans-serif;margin:0;background:var(--bg);color:#123}
+  header{background:linear-gradient(90deg,#4b9df8,#97d7ff);color:#fff;padding:18px;text-align:center}
+  main{max-width:920px;margin:18px auto;padding:18px}
+  .card{background:#fff;border-left:6px solid var(--accent);padding:18px;margin:14px 0;border-radius:8px}
+  .controls{display:flex;justify-content:flex-end;gap:10px;margin-bottom:12px}
+  .lang-toggle{background:var(--accent);color:#fff;padding:8px 12px;border-radius:6px;border:none;cursor:pointer}
+  .hindi{display:none}
+  .quiz{margin-top:14px;padding:12px;background:#f4f8ff;border-radius:8px}
+  label.option{display:block;padding:6px;border-radius:6px;border:1px solid #e6f1ff;margin:6px 0;cursor:pointer}
+  .img-ref img{max-width:100%;border-radius:8px}
+</style>
+</head>
+<body>
+<header><h1>Class 6 — Computer</h1><p>Chapter 4 — Internet Safety</p></header>
+<main>
+  <div class="controls">
+    <button id="toggleBtn" class="lang-toggle" onclick="toggleLanguage()">Switch to हिंदी</button>
+  </div>
+  <section class="card">
+    <h2>🌐 Internet Safety</h2>
+    <div class="english">
+      <p><strong>Overview:</strong> Keep your personal information safe, use strong passwords, avoid unknown links, and tell a trusted adult about suspicious messages.</p>
+      <ul>
+        <li>Use HTTPS and look for the padlock in addresses.</li>
+        <li>Enable two-factor authentication.</li>
+        <li>Keep software and antivirus updated.</li>
+      </ul>
+      <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/3/36/HTTPS_Security_lock_icon.png" alt="HTTPS"></div>
+    </div>
+    <div class="hindi">
+      <p><strong>ओवरव्यू:</strong> अपनी व्यक्तिगत जानकारी सुरक्षित रखें, मजबूत पासवर्ड का उपयोग करें, अज्ञात लिंक से बचें और संदिग्ध संदेशों की सूचना किसी भरोसेमंद वयस्क को दें।</p>
+      <ul>
+        <li>HTTPS और एड्रेस बार में लॉक देखें।</li>
+        <li>दो-कारक प्रमाणीकरण सक्षम करें।</li>
+        <li>सॉफ़्टवेयर और एंटीवायरस अपडेट रखें।</li>
+      </ul>
+      <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/3/36/HTTPS_Security_lock_icon.png" alt="HTTPS लॉक"></div>
+    </div>
+
+    <div class="quiz" id="quiz4">
+      <h3>Chapter 4 Quiz — 10 Questions</h3>
+      <div id="questions4"></div>
+      <button class="btn-check" onclick="checkAnswers4()">Check Answers</button>
+      <div id="score4" class="result" style="display:none"></div>
+    </div>
+  </section>
+</main>
+<footer style="text-align:center;padding:12px;background:#1b6fb0;color:#fff;margin-top:18px">&copy; 2025 RMS Govindpur — Chapter 4</footer>
+
+<script>
+let hindiVisible=false;
+function toggleLanguage(){hindiVisible=!hindiVisible;document.querySelectorAll('.hindi').forEach(e=>e.style.display=hindiVisible?'block':'none');document.querySelectorAll('.english').forEach(e=>e.style.display=hindiVisible?'none':'block');document.getElementById('toggleBtn').textContent=hindiVisible?'Switch to English':'Switch to हिंदी'; render4();}
+
+const data4=[
+ {q_en:'Which indicates a secure website?', options_en:['http','https','ftp','file'], ans:1, exp_en:'HTTPS is secure (uses encryption).', q_hi:'कौन सा सुरक्षित वेबसाइट दर्शाता है?', options_hi:['http','https','ftp','file'], exp_hi:'HTTPS एन्क्रिप्शन का उपयोग करता है।'},
+ {q_en:'True or False: Share your password with friends.', options_en:['True','False'], ans:1, exp_en:'Never share passwords.', q_hi:'सही या गलत: अपना पासवर्ड दोस्तों के साथ साझा करें।', options_hi:['सही','गलत'], exp_hi:'पासवर्ड कभी साझा न करें।'},
+ {q_en:'Phishing attempts usually arrive as:', options_en:['Phone calls only','Emails with suspicious links','Only in-person','Handwritten notes'], ans:1, exp_en:'Phishing often uses fake emails to steal info.', q_hi:'फिशिंग आमतौर पर किस रूप में आता है?', options_hi:['केवल फोन कॉल','संदिग्ध लिंक वाले ईमेल','केवल व्यक्तिगत','हाथ से लिखे नोट्स'], exp_hi:'फिशिंग नकली ईमेल का उपयोग करती है।'},
+ {q_en:'Two-factor authentication provides:', options_en:['No security','Extra security','Faster browsing','More spam'], ans:1, exp_en:'It adds an extra layer of security.', q_hi:'दो-कारक प्रमाणीकरण क्या देता है?', options_hi:['कोई सुरक्षा नहीं','अतिरिक्त सुरक्षा','तेज़ ब्राउज़िंग','अधिक स्पैम'], exp_hi:'यह अतिरिक्त सुरक्षा जोड़ता है।'},
+ {q_en:'Which is malware?', options_en:['Antivirus','Virus','Printer','Monitor'], ans:1, exp_en:'Virus is a type of malware.', q_hi:'कौन सा मालवेयर है?', options_hi:['एंटीवायरस','वायरस','प्रिंटर','मॉनिटर'], exp_hi:'वायरस मालवेयर का प्रकार है।'},
+ {q_en:'Safe browsing includes:', options_en:['Clicking unknown links','Updating browser','Sharing sensitive info','Using weak passwords'], ans:1, exp_en:'Keep browser updated for security.', q_hi:'सुरक्षित ब्राउज़िंग में शामिल है:', options_hi:['अनजाने लिंक पर क्लिक करना','ब्राउज़र अपडेट करना','गोपनीय जानकारी साझा करना','कमज़ोर पासवर्ड उपयोग करना'], exp_hi:'सुरक्षा के लिए ब्राउज़र अपडेट रखें।'},
+ {q_en:'Report cyberbullying to:', options_en:['A trusted adult','Stranger online','No one','Unknown forum'], ans:0, exp_en:'Tell a trusted adult or authority.', q_hi:'साइबर बुलिंग की रिपोर्ट किसे करें?', options_hi:['एक भरोसेमंद वयस्क','ऑनलाइन अजनबी','किसी को नहीं','अज्ञात फोरम'], exp_hi:'किसी भरोसेमंद वयस्क को बताएं।'},
+ {q_en:'True or False: Public Wi-Fi is always safe.', options_en:['True','False'], ans:1, exp_en:'Public Wi-Fi is not always secure.', q_hi:'सही या गलत: पब्लिक Wi-Fi हमेशा सुरक्षित है।', options_hi:['सही','गलत'], exp_hi:'पब्लिक Wi-Fi हमेशा सुरक्षित नहीं होता।'},
+ {q_en:'Which action helps password safety?', options_en:['Use same password everywhere','Use a strong unique password','Share it via email','Write it on wall'], ans:1, exp_en:'Use strong, unique passwords.', q_hi:'पासवर्ड सुरक्षा के लिए कौन सा कदम मदद करता है?', options_hi:['हर जगह एक ही पासवर्ड प्रयोग करें','मज़बूती और अलग पासवर्ड रखें','इसे ईमेल से साझा करें','दीवार पर लिख दें'], exp_hi:'मज़बूत और अलग पासवर्ड रखें।'},
+ {q_en:'Which is a sign of phishing?', options_en:['Personalized email from known sender','Suspicious link asking credentials','Email from teacher','Order receipt you placed'], ans:1, exp_en:'Phishing asks for credentials via fake links.', q_hi:'फिशिंग का संकेत क्या है?', options_hi:['परिचित प्रेषक से व्यक्तिगत ईमेल','संदिग्ध लिंक जो क्रेडेन्शियल माँगता है','शिक्षक का मेल','आपके द्वारा की गई खरीद की रसीद'], exp_hi:'फिशिंग नकली लिंक के माध्यम से क्रेडेन्शियल मांगता है।'}
+];
+
+function render4(){
+ const qdiv=document.getElementById('questions4'); qdiv.innerHTML=''; const useHindi=hindiVisible;
+ data4.forEach((it,i)=>{
+   const q = useHindi?it.q_hi:it.q_en;
+   const opts = useHindi?it.options_hi:it.options_en;
+   const div=document.createElement('div'); div.className='q';
+   let html=`<strong>${i+1}. ${q}</strong><div>`;
+   opts.forEach((o,idx)=> html += `<label class="option"><input type="radio" name="q4_${i}" value="${idx}"> ${o}</label>`);
+   html += `</div><div id="exp4_${i}" style="display:none"><small class="explain"></small></div>`;
+   div.innerHTML=html; qdiv.appendChild(div);
+ });
+}
+render4();
+
+function checkAnswers4(){
+ let score=0; const useHindi=hindiVisible;
+ data4.forEach((it,i)=>{
+  const sel=document.querySelector(`input[name="q4_${i}"]:checked`); const expDiv=document.getElementById(`exp4_${i}`);
+  const expText = useHindi? it.exp_hi: it.exp_en;
+  if(sel){ const val=parseInt(sel.value,10); if(val===it.ans) score++; expDiv.querySelector('.explain').textContent = (val===it.ans? (useHindi?'सही — ':'Correct — '):(useHindi?'गलत — ':'Incorrect — ')) + expText;}
+  else expDiv.querySelector('.explain').textContent = (useHindi?'उत्तर नहीं दिया — ':'No answer — ') + expText;
+  expDiv.style.display='block';
+ });
+ document.getElementById('score4').style.display='block';
+ document.getElementById('score4').innerHTML = hindiVisible? `<strong>आपका स्कोर: ${score}/${data4.length}</strong>`:`<strong>Your Score: ${score}/${data4.length}</strong>`;
+ window.scrollTo({top:document.getElementById('quiz4').offsetTop,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Chapter 7 - Input and Output Devices</title>
+<style>
+ :root{--accent:#1b6fb0;--bg:#f7fbff}
+ body{font-family:Arial,Helvetica,sans-serif;margin:0;background:var(--bg);color:#123}
+ header{background:linear-gradient(90deg,#4b9df8,#97d7ff);color:#fff;padding:18px;text-align:center}
+ main{max-width:920px;margin:18px auto;padding:18px}
+ .card{background:#fff;border-left:6px solid var(--accent);padding:18px;margin:14px 0;border-radius:8px}
+ .controls{display:flex;justify-content:flex-end}
+ .lang-toggle{background:var(--accent);color:#fff;padding:8px 12px;border-radius:6px;border:none;cursor:pointer}
+ .hindi{display:none}
+ .img-ref img{max-width:100%;border-radius:8px}
+ .quiz{background:#f4f8ff;padding:12px;border-radius:8px;margin-top:12px}
+</style>
+</head>
+<body>
+<header><h1>Class 6 — Computer</h1><p>Chapter 7 — Input & Output Devices</p></header>
+<main>
+ <div class="controls"><button id="toggleBtn" class="lang-toggle" onclick="toggleLanguage()">Switch to हिंदी</button></div>
+ <section class="card">
+   <h2>⌨️ Input and Output Devices</h2>
+   <div class="english">
+     <p>Input devices send data to the computer; output devices display or produce results. Some devices are combined (touchscreen).</p>
+     <ul>
+       <li><strong>Input:</strong> Keyboard, Mouse, Microphone, Scanner, Webcam</li>
+       <li><strong>Output:</strong> Monitor, Printer, Speaker, Projector</li>
+     </ul>
+     <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Computer_keyboard_key_layout.png" alt="Keyboard"></div>
+   </div>
+   <div class="hindi">
+     <p>इनपुट डिवाइस कंप्यूटर को डेटा भेजते हैं; आउटपुट डिवाइस परिणाम दिखाते/प्रदान करते हैं। कुछ डिवाइस संयुक्त होते हैं (जैसे टचस्क्रीन)।</p>
+     <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Computer_keyboard_key_layout.png" alt="कीबोर्ड"></div>
+   </div>
+
+   <div class="quiz" id="quiz7">
+     <h3>Chapter 7 Quiz — 10 Questions</h3>
+     <div id="questions7"></div>
+     <button class="btn-check" onclick="check7()">Check Answers</button>
+     <div id="score7" class="result" style="display:none"></div>
+   </div>
+ </section>
+</main>
+<footer style="text-align:center;padding:12px;background:#1b6fb0;color:#fff;margin-top:18px">&copy; 2025 RMS Govindpur — Chapter 7</footer>
+
+<script>
+let hindiVisible=false;
+function toggleLanguage(){hindiVisible=!hindiVisible;document.querySelectorAll('.hindi').forEach(e=>e.style.display=hindiVisible?'block':'none');document.querySelectorAll('.english').forEach(e=>e.style.display=hindiVisible?'none':'block');document.getElementById('toggleBtn').textContent=hindiVisible?'Switch to English':'Switch to हिंदी'; render7();}
+
+const data7=[
+ {q_en:'Which is an output device?', options_en:['Keyboard','Mouse','Monitor','Microphone'], ans:2, exp_en:'Monitor displays output.', q_hi:'कौन सा आउटपुट डिवाइस है?', options_hi:['कीबोर्ड','माउस','मॉनिटर','माइक्रोफोन'], exp_hi:'मॉनिटर आउटपुट दिखाता है।'},
+ {q_en:'Which device captures audio?', options_en:['Scanner','Microphone','Printer','Monitor'], ans:1, exp_en:'Microphone records sound.', q_hi:'कौन सा डिवाइस ऑडियो रिकॉर्ड करता है?', options_hi:['स्कैनर','माइक्रोफोन','प्रिंटर','मॉनिटर'], exp_hi:'माइक्रोफोन ध्वनि रिकॉर्ड करता है।'},
+ {q_en:'True or False: A touchscreen is both input and output.', options_en:['True','False'], ans:0, exp_en:'Touchscreens display (output) and accept touch (input).', q_hi:'सही या गलत: टचस्क्रीन इनपुट और आउटपुट दोनों है।', options_hi:['सही','गलत'], exp_hi:'टचस्क्रीन डिस्प्ले और स्पर्श स्वीकार करता है।'},
+ {q_en:'Which device converts paper to digital?', options_en:['Printer','Scanner','Speaker','Headphone'], ans:1, exp_en:'Scanner converts printed pages to digital images.', q_hi:'कौन सा डिवाइस कागज को डिजिटल में बदलता है?', options_hi:['प्रिंटर','स्कैनर','स्पीकर','हेडफोन'], exp_hi:'स्कैनर प्रिंटेड पेज को डिजिटल बनाता है।'},
+ {q_en:'Which is used to make paper copies?', options_en:['Monitor','Printer','Mouse','Microphone'], ans:1, exp_en:'Printer produces paper copies.', q_hi:'कागज़ प्रतियाँ बनाने के लिए किसका उपयोग होता है?', options_hi:['मॉनिटर','प्रिंटर','माउस','माइक्रोफोन'], exp_hi:'प्रिंटर कागज़ प्रतियाँ बनाता है।'},
+ {q_en:'Which lets you point and click on screen?', options_en:['Keyboard','Mouse','Printer','Scanner'], ans:1, exp_en:'Mouse is a pointing device.', q_hi:'स्क्रीन पर पॉइंट करने और क्लिक करने के लिए क्या उपयोग होता है?', options_hi:['कीबोर्ड','माउस','प्रिंटर','स्कैनर'], exp_hi:'माउस पॉइंटिंग डिवाइस है।'},
+ {q_en:'True or False: Speakers are input devices.', options_en:['True','False'], ans:1, exp_en:'Speakers are output devices that play sound.', q_hi:'सही या गलत: स्पीकर्स इनपुट डिवाइस हैं।', options_hi:['सही','गलत'], exp_hi:'स्पीकर्स आउटपुट डिवाइस हैं।'},
+ {q_en:'Which device is used for video calls?', options_en:['Webcam','Printer','Keyboard','Scanner'], ans:0, exp_en:'Webcam captures live video.', q_hi:'वीडियो कॉल के लिए कौन सा डिवाइस उपयोग होता है?', options_hi:['वेबकैम','प्रिंटर','कीबोर्ड','स्कैनर'], exp_hi:'वेबकैम लाइव वीडियो कैप्चर करता है।'},
+ {q_en:'Which is used to enter text?', options_en:['Monitor','Printer','Keyboard','Speaker'], ans:2, exp_en:'Keyboard is used to type text.', q_hi:'टेक्स्ट दर्ज करने के लिए क्या उपयोग होता है?', options_hi:['मॉनिटर','प्रिंटर','कीबोर्ड','स्पीकर'], exp_hi:'कीबोर्ड टेक्स्ट इनपुट करता है।'},
+ {q_en:'True or False: Multifunction printers can scan and copy.', options_en:['True','False'], ans:0, exp_en:'Multifunction printers print, scan and copy.', q_hi:'सही या गलत: मल्टीफंक्शन प्रिंटर स्कैन और कॉपी भी कर सकते हैं।', options_hi:['सही','गलत'], exp_hi:'मल्टीफंक्शन प्रिंटर कई कार्य कर सकते हैं।'}
+];
+
+function render7(){ const qdiv=document.getElementById('questions7'); qdiv.innerHTML=''; const useHindi=hindiVisible;
+ data7.forEach((it,i)=>{ const q=useHindi?it.q_hi:it.q_en; const opts=useHindi?it.options_hi:it.options_en; const div=document.createElement('div'); div.className='q'; let html=`<strong>${i+1}. ${q}</strong><div>`; opts.forEach((o,idx)=> html+=`<label class="option"><input type="radio" name="q7_${i}" value="${idx}"> ${o}</label>`); html+=`</div><div id="exp7_${i}" style="display:none"><small class="explain"></small></div>`; div.innerHTML=html; qdiv.appendChild(div); });
+}
+render7();
+
+function check7(){ let score=0; const useHindi=hindiVisible;
+ data7.forEach((it,i)=>{ const sel=document.querySelector(`input[name="q7_${i}"]:checked`); const expDiv=document.getElementById(`exp7_${i}`); const expText=useHindi?it.exp_hi:it.exp_en; if(sel){ const val=parseInt(sel.value,10); if(val===it.ans) score++; expDiv.querySelector('.explain').textContent=(val===it.ans?(useHindi?'सही — ':'Correct — '):(useHindi?'गलत — ':'Incorrect — ')) + expText; } else expDiv.querySelector('.explain').textContent=(useHindi?'उत्तर नहीं दिया — ':'No answer — ') + expText; expDiv.style.display='block'; }); document.getElementById('score7').style.display='block'; document.getElementById('score7').innerHTML = hindiVisible? `<strong>आपका स्कोर: ${score}/${data7.length}</strong>`:`<strong>Your Score: ${score}/${data7.length}</strong>`; window.scrollTo({top:document.getElementById('quiz7').offsetTop,behavior:'smooth'}); }
+</script>
+</body>
+</html>

@@ -1,0 +1,148 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Chapter 8 - Computer Memory</title>
+    <style>
+        :root {
+            --accent: #1b6fb0;
+            --bg: #f7fbff
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            margin: 0;
+            background: var(--bg);
+            color: #123
+        }
+
+        header {
+            background: linear-gradient(90deg, #4b9df8, #97d7ff);
+            color: #fff;
+            padding: 18px;
+            text-align: center
+        }
+
+        main {
+            max-width: 920px;
+            margin: 18px auto;
+            padding: 18px
+        }
+
+        .card {
+            background: #fff;
+            border-left: 6px solid var(--accent);
+            padding: 18px;
+            margin: 14px 0;
+            border-radius: 8px
+        }
+
+        .controls {
+            display: flex;
+            justify-content: flex-end
+        }
+
+        .lang-toggle {
+            background: var(--accent);
+            color: #fff;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border: none;
+            cursor: pointer
+        }
+
+        .hindi {
+            display: none
+        }
+
+        .img-ref img {
+            max-width: 100%;
+            border-radius: 8px
+        }
+
+        .quiz {
+            background: #f4f8ff;
+            padding: 12px;
+            border-radius: 8px;
+            margin-top: 12px
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Class 6 — Computer</h1>
+        <p>Chapter 8 — Computer Memory</p>
+    </header>
+    <main>
+        <div class="controls"><button id="toggleBtn" class="lang-toggle" onclick="toggleLanguage()">Switch to
+                हिंदी</button></div>
+        <section class="card">
+            <h2>💾 Computer Memory</h2>
+            <div class="english">
+                <p>Memory stores data and instructions. Primary memory (RAM/ROM) is used during processing; secondary
+                    memory (HDD/SSD) stores long-term data.</p>
+                <ul>
+                    <li><strong>RAM:</strong> Volatile, fast.</li>
+                    <li><strong>ROM:</strong> Non-volatile, stores firmware.</li>
+                    <li><strong>Cache:</strong> Very fast memory close to CPU.</li>
+                </ul>
+                <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/RAM_Memory_chip.jpg"
+                        alt="RAM"></div>
+            </div>
+            <div class="hindi">
+                <p>मेमोरी डेटा और निर्देशों को संग्रहीत करती है। प्राइमरी मेमोरी (RAM/ROM) प्रोसेसिंग के दौरान उपयोग
+                    होती है; सेकेंडरी मेमोरी (HDD/SSD) दीर्घकालिक भंडारण के लिए।</p>
+                <ul>
+                    <li><strong>RAM:</strong> अस्थायी, तेज।</li>
+                    <li><strong>ROM:</strong> स्थायी, फ़र्मवेयर संग्रहीत करता है।</li>
+                    <li><strong>कैश:</strong> CPU के पास बहुत तेज मेमोरी।</li>
+                </ul>
+                <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/3/3b/RAM_Memory_chip.jpg"
+                        alt="RAM चिप"></div>
+            </div>
+
+            <div class="quiz" id="quiz8">
+                <h3>Chapter 8 Quiz — 10 Questions</h3>
+                <div id="questions8"></div>
+                <button class="btn-check" onclick="check8()">Check Answers</button>
+                <div id="score8" class="result" style="display:none"></div>
+            </div>
+        </section>
+    </main>
+    <footer style="text-align:center;padding:12px;background:#1b6fb0;color:#fff;margin-top:18px">&copy; 2025 RMS
+        Govindpur — Chapter 8</footer>
+
+    <script>
+        let hindiVisible = false;
+        function toggleLanguage() { hindiVisible = !hindiVisible; document.querySelectorAll('.hindi').forEach(e => e.style.display = hindiVisible ? 'block' : 'none'); document.querySelectorAll('.english').forEach(e => e.style.display = hindiVisible ? 'none' : 'block'); document.getElementById('toggleBtn').textContent = hindiVisible ? 'Switch to English' : 'Switch to हिंदी'; render8(); }
+
+        const data8 = [
+            { q_en: 'Which memory is volatile?', options_en: ['ROM', 'HDD', 'RAM', 'SSD'], ans: 2, exp_en: 'RAM is volatile.', q_hi: 'कौन सी मेमोरी अस्थायी है?', options_hi: ['ROM', 'HDD', 'RAM', 'SSD'], exp_hi: 'RAM अस्थायी है।' },
+            { q_en: 'What is ROM used for?', options_en: ['Store OS temporarily', 'Store firmware permanently', 'Run apps', 'Display images'], ans: 1, exp_en: 'ROM stores firmware like BIOS.', q_hi: 'ROM किसके लिए उपयोग होती है?', options_hi: ['OS अस्थायी रूप से संग्रहीत करना', 'फर्मवेयर स्थायी रूप से रखना', 'एप्स चलाना', 'इमेज दिखाना'], exp_hi: 'ROM में BIOS जैसी फर्मवेयर रहती है।' },
+            { q_en: 'True or False: Cache is slower than RAM.', options_en: ['True', 'False'], ans: 1, exp_en: 'Cache is faster than RAM.', q_hi: 'सही या गलत: कैश RAM से धीमा है।', options_hi: ['सही', 'गलत'], exp_hi: 'कैश RAM से तेज होता है।' },
+            { q_en: 'Which storage is fastest?', options_en: ['HDD', 'SSD', 'Floppy', 'CD'], ans: 1, exp_en: 'SSD is faster than HDD.', q_hi: 'कौन सा स्टोरेज सबसे तेज है?', options_hi: ['HDD', 'SSD', 'Floppy', 'CD'], exp_hi: 'SSD HDD से तेज है।' },
+            { q_en: 'What happens to RAM when power is off?', options_en: ['Data remains', 'Data is lost', 'Becomes faster', 'Increases size'], ans: 1, exp_en: 'RAM loses its data without power.', q_hi: 'पॉवर बंद होने पर RAM के साथ क्या होता है?', options_hi: ['डेटा रहता है', 'डेटा खो जाता है', 'तेज़ हो जाता है', 'आकार बढ़ जाता है'], exp_hi: 'RAM में डेटा खो जाता है।' },
+            { q_en: 'Which memory holds BIOS?', options_en: ['RAM', 'ROM', 'Cache', 'HDD'], ans: 1, exp_en: 'BIOS stored in ROM.', q_hi: 'BIOS किस मेमोरी में रहती है?', options_hi: ['RAM', 'ROM', 'Cache', 'HDD'], exp_hi: 'BIOS ROM में रहता है।' },
+            { q_en: 'True or False: Adding more RAM allows more programs to run simultaneously.', options_en: ['True', 'False'], ans: 0, exp_en: 'More RAM helps multitasking.', q_hi: 'सही या गलत: अधिक RAM से अधिक प्रोग्राम साथ चल सकते हैं।', options_hi: ['सही', 'गलत'], exp_hi: 'अधिक RAM से मल्टीटास्किंग बेहतर होती है।' },
+            { q_en: 'Which is non-volatile?', options_en: ['RAM', 'Cache', 'ROM', 'Registers'], ans: 2, exp_en: 'ROM is non-volatile.', q_hi: 'कौन सा non-volatile है?', options_hi: ['RAM', 'Cache', 'ROM', 'Registers'], exp_hi: 'ROM non-volatile है।' },
+            { q_en: 'Why is cache used?', options_en: ['To slow the CPU', 'To store permanent files', 'To speed up frequent operations', 'To print documents'], ans: 2, exp_en: 'Cache speeds up frequent CPU operations.', q_hi: 'कैश क्यों उपयोग किया जाता है?', options_hi: ['CPU धीमा करने के लिए', 'स्थायी फाइलें रखने के लिए', 'बार-बार होने वाले ऑपरेशन्स तेज करने के लिए', 'दस्तावेज़ प्रिंट करने के लिए'], exp_hi: 'कैश बार-बार होने वाले ऑपरेशन्स तेज करता है।' },
+            { q_en: 'True or False: Secondary memory is used for long-term storage.', options_en: ['True', 'False'], ans: 0, exp_en: 'Secondary memory stores data long-term.', q_hi: 'सही या गलत: सेकेंडरी मेमोरी दीर्घकालिक स्टोरेज के लिए होती है।', options_hi: ['सही', 'गलत'], exp_hi: 'सेकेंडरी मेमोरी दीर्घकालिक भंडारण के लिए होती है।' }
+        ];
+
+        function render8() {
+            const qdiv = document.getElementById('questions8'); qdiv.innerHTML = ''; const useHindi = hindiVisible;
+            data8.forEach((it, i) => { const q = useHindi ? it.q_hi : it.q_en; const opts = useHindi ? it.options_hi : it.options_en; const div = document.createElement('div'); div.className = 'q'; let html = `<strong>${i + 1}. ${q}</strong><div>`; opts.forEach((o, idx) => html += `<label class="option"><input type="radio" name="q8_${i}" value="${idx}"> ${o}</label>`); html += `</div><div id="exp8_${i}" style="display:none"><small class="explain"></small></div>`; div.innerHTML = html; qdiv.appendChild(div); });
+        }
+        render8();
+
+        function check8() {
+            let score = 0; const useHindi = hindiVisible;
+            data8.forEach((it, i) => { const sel = document.querySelector(`input[name="q8_${i}"]:checked`); const expDiv = document.getElementById(`exp8_${i}`); const expText = useHindi ? it.exp_hi : it.exp_en; if (sel) { const val = parseInt(sel.value, 10); if (val === it.ans) score++; expDiv.querySelector('.explain').textContent = (val === it.ans ? (useHindi ? 'सही — ' : 'Correct — ') : (useHindi ? 'गलत — ' : 'Incorrect — ')) + expText; } else expDiv.querySelector('.explain').textContent = (useHindi ? 'उत्तर नहीं दिया — ' : 'No answer — ') + expText; expDiv.style.display = 'block'; }); document.getElementById('score8').style.display = 'block'; document.getElementById('score8').innerHTML = hindiVisible ? `<strong>आपका स्कोर: ${score}/${data8.length}</strong>` : `<strong>Your Score: ${score}/${data8.length}</strong>`; window.scrollTo({ top: document.getElementById('quiz8').offsetTop, behavior: 'smooth' });
+        }
+    </script>
+</body>
+
+</html>

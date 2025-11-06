@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Chapter 9 - Storage Devices</title>
+<style>
+ :root{--accent:#1b6fb0;--bg:#f7fbff}
+ body{font-family:Arial,Helvetica,sans-serif;margin:0;background:var(--bg);color:#123}
+ header{background:linear-gradient(90deg,#4b9df8,#97d7ff);color:#fff;padding:18px;text-align:center}
+ main{max-width:920px;margin:18px auto;padding:18px}
+ .card{background:#fff;border-left:6px solid var(--accent);padding:18px;margin:14px 0;border-radius:8px}
+ .controls{display:flex;justify-content:flex-end}
+ .lang-toggle{background:var(--accent);color:#fff;padding:8px 12px;border-radius:6px;border:none;cursor:pointer}
+ .hindi{display:none}
+ .img-ref img{max-width:100%;border-radius:8px}
+ .quiz{background:#f4f8ff;padding:12px;border-radius:8px;margin-top:12px}
+</style>
+</head>
+<body>
+<header><h1>Class 6 — Computer</h1><p>Chapter 9 — Storage Devices</p></header>
+<main>
+  <div class="controls"><button id="toggleBtn" class="lang-toggle" onclick="toggleLanguage()">Switch to हिंदी</button></div>
+  <section class="card">
+    <h2>💽 Storage Devices</h2>
+    <div class="english">
+      <p>Storage devices hold data permanently: HDD, SSD, USB drives, memory cards and cloud storage. Choose based on speed, capacity and portability.</p>
+      <ul>
+        <li>HDD — large capacity, mechanical.</li>
+        <li>SSD — faster, no moving parts.</li>
+        <li>USB flash — portable.</li>
+        <li>Cloud storage — accessible from anywhere with internet.</li>
+      </ul>
+      <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Hard_drive.jpg" alt="Hard drive"></div>
+    </div>
+    <div class="hindi">
+      <p>स्टोरेज डिवाइस डेटा को स्थायी रूप से रखते हैं: HDD, SSD, USB, मेमोरी कार्ड और क्लाउड। स्पीड, क्षमता और पोर्टेबिलिटी के आधार पर चुनें।</p>
+      <ul>
+        <li>HDD — बड़ी क्षमता, मैकेनिकल।</li>
+        <li>SSD — तेज, बिना मूविंग पार्ट्स के।</li>
+        <li>USB — पोर्टेबल।</li>
+        <li>क्लाउड — इंटरनेट से कहीं से भी पहुँचा जा सकता है।</li>
+      </ul>
+      <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Hard_drive.jpg" alt="हार्ड ड्राइव"></div>
+    </div>
+
+    <div class="quiz" id="quiz9">
+      <h3>Chapter 9 Quiz — 10 Questions</h3>
+      <div id="questions9"></div>
+      <button class="btn-check" onclick="check9()">Check Answers</button>
+      <div id="score9" class="result" style="display:none"></div>
+    </div>
+  </section>
+</main>
+<footer style="text-align:center;padding:12px;background:#1b6fb0;color:#fff;margin-top:18px">&copy; 2025 RMS Govindpur — Chapter 9</footer>
+
+<script>
+let hindiVisible=false;
+function toggleLanguage(){hindiVisible=!hindiVisible;document.querySelectorAll('.hindi').forEach(e=>e.style.display=hindiVisible?'block':'none');document.querySelectorAll('.english').forEach(e=>e.style.display=hindiVisible?'none':'block');document.getElementById('toggleBtn').textContent=hindiVisible?'Switch to English':'Switch to हिंदी'; render9();}
+
+const data9=[
+ {q_en:'Which is faster for booting OS?', options_en:['HDD','SSD','CD','Floppy'], ans:1, exp_en:'SSD has faster read speeds than HDD.', q_hi:'OS बूट करने के लिए कौन सा तेज है?', options_hi:['HDD','SSD','CD','Floppy'], exp_hi:'SSD की रीड स्पीड HDD से तेज होती है।'},
+ {q_en:'Which is portable?', options_en:['Internal HDD','USB Flash Drive','Motherboard','RAM'], ans:1, exp_en:'USB flash drives are portable.', q_hi:'कौन सा पोर्टेबल है?', options_hi:['Internal HDD','USB Flash Drive','Motherboard','RAM'], exp_hi:'USB फ्लैश ड्राइव पोर्टेबल होते हैं।'},
+ {q_en:'True or False: Cloud storage requires internet to access files.', options_en:['True','False'], ans:0, exp_en:'Cloud files need internet to access.', q_hi:'सही या गलत: क्लाउड स्टोरेज में फ़ाइलें एक्सेस करने के लिए इंटरनेट चाहिए।', options_hi:['सही','गलत'], exp_hi:'क्लाउड तक पहुंचने के लिए इंटरनेट चाहिए।'},
+ {q_en:'Which storage is least used today?', options_en:['USB','SSD','CD/DVD','Cloud'], ans:2, exp_en:'CD/DVD are less used now.', q_hi:'आजकल सबसे कम उपयोग कौन सा है?', options_hi:['USB','SSD','CD/DVD','Cloud'], exp_hi:'CD/DVD का उपयोग घट गया है।'},
+ {q_en:'Which holds the largest amount cheaply?', options_en:['SSD','HDD','RAM','Cache'], ans:1, exp_en:'HDDs provide large capacity at lower cost.', q_hi:'सबसे बड़ी मात्रा सस्ती में किसमें रखी जा सकती है?', options_hi:['SSD','HDD','RAM','Cache'], exp_hi:'HDD कम लागत में बड़ी क्षमता देता है।'},
+ {q_en:'True or False: Memory cards are used in cameras and phones.', options_en:['True','False'], ans:0, exp_en:'SD/microSD cards are commonly used.', q_hi:'सही या गलत: मेमोरी कार्ड कैमरों और फ़ोन में उपयोग होते हैं।', options_hi:['सही','गलत'], exp_hi:'SD/microSD कार्ड आम हैं।'},
+ {q_en:'Which storage is best for speed?', options_en:['HDD','SSD','CD','DVD'], ans:1, exp_en:'SSD has the best speed among these.', q_hi:'स्पीड के लिए कौन सा स्टोरेज बेहतर है?', options_hi:['HDD','SSD','CD','DVD'], exp_hi:'इनमें SSD सबसे तेज है।'},
+ {q_en:'What is an advantage of cloud storage?', options_en:['Accessible anywhere','No internet needed','No limits','Cheapest always'], ans:0, exp_en:'Cloud is accessible from any device with internet.', q_hi:'क्लाउड स्टोरेज का लाभ क्या है?', options_hi:['कहीं से भी पहुँचनीय','इंटरनेट नहीं चाहिए','कोई सीमा नहीं','हमेशा सबसे सस्ता'], exp_hi:'इंटरनेट से किसी भी डिवाइस से उपलब्ध होता है।'},
+ {q_en:'Which is removable storage?', options_en:['Internal SSD','RAM','USB flash drive','CPU'], ans:2, exp_en:'USB flash drives are removable.', q_hi:'कौन सा removable storage है?', options_hi:['Internal SSD','RAM','USB flash drive','CPU'], exp_hi:'USB फ्लैश ड्राइव removable है।'},
+ {q_en:'True or False: Regular backups prevent data loss.', options_en:['True','False'], ans:0, exp_en:'Backups protect against accidental loss or drive failure.', q_hi:'सही या गलत: नियमित बैकअप डेटा नुकसान से रोकते हैं।', options_hi:['सही','गलत'], exp_hi:'बैकअप आकस्मिक नुकसान से बचाते हैं।'}
+];
+
+function render9(){ const qdiv=document.getElementById('questions9'); qdiv.innerHTML=''; const useHindi=hindiVisible;
+ data9.forEach((it,i)=>{ const q=useHindi?it.q_hi:it.q_en; const opts=useHindi?it.options_hi:it.options_en; const div=document.createElement('div'); div.className='q'; let html=`<strong>${i+1}. ${q}</strong><div>`; opts.forEach((o,idx)=> html+=`<label class="option"><input type="radio" name="q9_${i}" value="${idx}"> ${o}</label>`); html+=`</div><div id="exp9_${i}" style="display:none"><small class="explain"></small></div>`; div.innerHTML=html; qdiv.appendChild(div); });
+}
+render9();
+
+function check9(){ let score=0; const useHindi=hindiVisible;
+ data9.forEach((it,i)=>{ const sel=document.querySelector(`input[name="q9_${i}"]:checked`); const expDiv=document.getElementById(`exp9_${i}`); const expText=useHindi?it.exp_hi:it.exp_en; if(sel){ const val=parseInt(sel.value,10); if(val===it.ans) score++; expDiv.querySelector('.explain').textContent=(val===it.ans?(useHindi?'सही — ':'Correct — '):(useHindi?'गलत — ':'Incorrect — ')) + expText; } else expDiv.querySelector('.explain').textContent=(useHindi?'उत्तर नहीं दिया — ':'No answer — ') + expText; expDiv.style.display='block'; }); document.getElementById('score9').style.display='block'; document.getElementById('score9').innerHTML = hindiVisible? `<strong>आपका स्कोर: ${score}/${data9.length}</strong>`:`<strong>Your Score: ${score}/${data9.length}</strong>`; window.scrollTo({top:document.getElementById('quiz9').offsetTop,behavior:'smooth'}); }
+</script>
+</body>
+</html>

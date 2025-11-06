@@ -1,0 +1,254 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Chapter 1 - Introduction to Computers</title>
+<style>
+  :root{--accent:#1b6fb0;--bg:#f7fbff}
+  body{font-family:Arial,Helvetica,sans-serif;margin:0;background:var(--bg);color:#123;line-height:1.5}
+  header{background:linear-gradient(90deg,#4b9df8,#97d7ff);color:#fff;padding:18px;text-align:center}
+  main{max-width:920px;margin:18px auto;padding:18px}
+  .card{background:#fff;border-left:6px solid var(--accent);padding:18px;margin:14px 0;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+  h1,h2{margin:0 0 10px;color:var(--accent)}
+  .controls{display:flex;justify-content:flex-end;gap:10px;margin-bottom:12px}
+  .lang-toggle{background:var(--accent);color:#fff;padding:8px 12px;border-radius:6px;border:none;cursor:pointer;font-weight:700}
+  .img-ref{text-align:center;margin-top:12px}
+  .img-ref img{max-width:100%;height:auto;border-radius:8px}
+  .hindi{display:none}
+  .quiz{margin-top:14px;padding:12px;background:#f4f8ff;border-radius:8px}
+  .q{margin:12px 0}
+  .btn-check{background:#1b6fb0;color:#fff;padding:8px 12px;border:none;border-radius:6px;cursor:pointer}
+  .result{margin-top:10px;padding:10px;border-radius:6px;background:#fffef6;border-left:4px solid #ffcc33}
+  footer{text-align:center;padding:12px;background:var(--accent);color:#fff;margin-top:18px}
+  label.option{display:block;padding:6px;border-radius:6px;border:1px solid #e6f1ff;margin:6px 0;cursor:pointer}
+  small.explain{display:block;margin-left:18px;color:#234;margin-top:6px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Class 6 — Computer</h1>
+  <p>Chapter 1 — Introduction to Computers</p>
+</header>
+
+<main>
+  <div class="controls">
+    <button id="toggleBtn" class="lang-toggle" onclick="toggleLanguage()">Switch to हिंदी</button>
+  </div>
+
+  <section class="card" id="content">
+    <h2>💻 What is a Computer?</h2>
+
+    <div class="english">
+      <p><strong>Overview:</strong> A computer is an electronic device that accepts data (input), processes it according to instructions, stores results, and produces output. It performs tasks using programs and helps us solve problems quickly and accurately.</p>
+
+      <h3>Components & Types</h3>
+      <ul>
+        <li><strong>CPU:</strong> Processes instructions and performs calculations.</li>
+        <li><strong>Memory:</strong> RAM and ROM store data temporarily and permanently.</li>
+        <li><strong>Input Devices:</strong> Keyboard, Mouse, Scanner.</li>
+        <li><strong>Output Devices:</strong> Monitor, Printer, Speaker.</li>
+      </ul>
+
+      <h3>Uses of Computers</h3>
+      <ul>
+        <li>Education, communication, entertainment, research, government, business.</li>
+      </ul>
+
+      <div class="img-ref">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Computer_components.jpg" alt="Computer components">
+      </div>
+    </div>
+
+    <div class="hindi">
+      <p><strong>ओवरव्यू:</strong> कंप्यूटर एक इलेक्ट्रॉनिक डिवाइस है जो डेटा (इनपुट) लेता है, उसे निर्देशों के अनुसार संसाधित करता है, परिणाम संग्रहीत करता है और आउटपुट देता है। ये प्रोग्राम्स का उपयोग करके कार्य करते हैं और हमें तेज़ी से समस्याओं को हल करने में मदद करते हैं।</p>
+
+      <h3>घटक और प्रकार</h3>
+      <ul>
+        <li><strong>CPU:</strong> निर्देशों को प्रोसेस करता है और गणना करता है।</li>
+        <li><strong>मेमोरी:</strong> RAM और ROM अस्थायी और स्थायी रूप से डेटा रखते हैं।</li>
+        <li><strong>इनपुट डिवाइस:</strong> कीबोर्ड, माउस, स्कैनर।</li>
+        <li><strong>आउटपुट डिवाइस:</strong> मॉनिटर, प्रिंटर, स्पीकर।</li>
+      </ul>
+
+      <h3>कंप्यूटर के उपयोग</h3>
+      <ul>
+        <li>शिक्षा, संचार, मनोरंजन, अनुसंधान, सरकार, व्यापार।</li>
+      </ul>
+
+      <div class="img-ref">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/51/Computer_components.jpg" alt="कंप्यूटर घटक">
+      </div>
+    </div>
+
+    <!-- QUIZ -->
+    <div class="quiz" id="quiz">
+      <h3>Chapter 1 Quiz — 10 Questions</h3>
+      <div id="questions"></div>
+      <button class="btn-check" onclick="checkAnswers()">Check Answers</button>
+      <div id="score" class="result" style="display:none"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2025 RMS Govindpur — Chapter 1</p>
+</footer>
+
+<script>
+/* Language toggle */
+let hindiVisible=false;
+function toggleLanguage(){
+  hindiVisible = !hindiVisible;
+  document.querySelectorAll('.hindi').forEach(e=> e.style.display = hindiVisible ? 'block':'none');
+  document.querySelectorAll('.english').forEach(e=> e.style.display = hindiVisible ? 'none':'block');
+  document.getElementById('toggleBtn').textContent = hindiVisible ? 'Switch to English' : 'Switch to हिंदी';
+  window.scrollTo({top:0,behavior:'smooth'});
+}
+/* Questions data: each item has en/q, options en, correct index, explanation en; and hindi versions */
+const data = [
+  {
+    q_en:'What is the main function of a CPU?',
+    options_en:['Store files','Process instructions','Display images','Print documents'],
+    ans:1,
+    exp_en:'CPU executes instructions and performs computations.',
+    q_hi:'CPU का मुख्य कार्य क्या है?',
+    options_hi:['फाइलें संग्रहित करना','निर्देशों को प्रोसेस करना','छवियाँ दिखाना','दस्तावेज़ प्रिंट करना'],
+    exp_hi:'CPU निर्देशों को निष्पादित करता है और गणना करता है।'
+  },
+  {
+    q_en:'Which of the following is volatile memory?',
+    options_en:['ROM','Hard Disk','RAM','SSD'],
+    ans:2,
+    exp_en:'RAM is volatile; it loses data when power is off.',
+    q_hi:'निम्न में से कुनसी अस्थायी (volatile) मेमोरी है?',
+    options_hi:['ROM','हार्ड डिस्क','RAM','SSD'],
+    exp_hi:'RAM अस्थायी है; पॉवर बंद होने पर डेटा खो जाता है।'
+  },
+  {
+    q_en:'Which is an input device?',
+    options_en:['Monitor','Printer','Mouse','Speaker'],
+    ans:2,
+    exp_en:'Mouse is used to input data by clicking/pointing.',
+    q_hi:'कौन सा इनपुट डिवाइस है?',
+    options_hi:['मॉनिटर','प्रिंटर','माउस','स्पीकर'],
+    exp_hi:'माउस डेटा इनपुट करने के लिए उपयोग होता है।'
+  },
+  {
+    q_en:'The sequence a computer follows is:',
+    options_en:['Output → Input → Process','Input → Output → Process','Input → Process → Output','Process → Input → Output'],
+    ans:2,
+    exp_en:'Computers follow Input → Process → Output.',
+    q_hi:'कंप्यूटर किस क्रम का पालन करता है?',
+    options_hi:['आउटपुट → इनपुट → प्रोसेस','इनपुट → आउटपुट → प्रोसेस','इनपुट → प्रोसेस → आउटपुट','प्रोसेस → इनपुट → आउटपुट'],
+    exp_hi:'कंप्यूटर इनपुट → प्रोसेस → आउटपुट का पालन करते हैं।'
+  },
+  {
+    q_en:'Which device shows visual output?',
+    options_en:['Keyboard','Monitor','Microphone','Scanner'],
+    ans:1,
+    exp_en:'Monitor displays visual output.',
+    q_hi:'कौन सा डिवाइस विज़ुअल आउटपुट दिखाता है?',
+    options_hi:['कीबोर्ड','मॉनिटर','माइक्रोफोन','स्कैनर'],
+    exp_hi:'मॉनिटर विजुअल आउटपुट दिखाता है।'
+  },
+  {
+    q_en:'True or False: A smartphone is a type of computer.',
+    options_en:['True','False'],
+    ans:0,
+    exp_en:'Smartphones are computers with CPU, memory and OS.',
+    q_hi:'सही या गलत: स्मार्टफोन एक प्रकार का कंप्यूटर है।',
+    options_hi:['सही','गलत'],
+    exp_hi:'स्मार्टफोन में CPU, मेमोरी और OS होते हैं; इसलिए यह कंप्यूटर है।'
+  },
+  {
+    q_en:'Which one is used for long-term storage?',
+    options_en:['RAM','ROM','Hard Disk','Cache'],
+    ans:2,
+    exp_en:'Hard Disk stores data permanently until deleted.',
+    q_hi:'कौन सी डिवाइस दीर्घकालिक भंडारण के लिए उपयोग होती है?',
+    options_hi:['RAM','ROM','हार्ड डिस्क','कैश'],
+    exp_hi:'हार्ड डिस्क डेटा को स्थायी रूप से संग्रहीत करती है।'
+  },
+  {
+    q_en:'Which is not a use of computers?',
+    options_en:['Education','Cooking food manually','Communication','Entertainment'],
+    ans:1,
+    exp_en:'Cooking food manually is not a computer use (unless using a smart appliance).',
+    q_hi:'कंप्यूटर का उपयोग नहीं है?',
+    options_hi:['शिक्षा','हाथ से खाना बनाना','संचार','मनोरंजन'],
+    exp_hi:'हाथ से खाना बनाना कंप्यूटर का उपयोग नहीं है।'
+  },
+  {
+    q_en:'Which term refers to a set of instructions for a computer?',
+    options_en:['Data','Hardware','Software','Monitor'],
+    ans:2,
+    exp_en:'Software is programs (instructions) that run on hardware.',
+    q_hi:'किस शब्द का अर्थ कंप्यूटर के लिए निर्देशों के सेट से है?',
+    options_hi:['डेटा','हार्डवेयर','सॉफ्टवेयर','मॉनिटर'],
+    exp_hi:'सॉफ्टवेयर हार्डवेयर पर चलने वाले प्रोग्राम होते हैं।'
+  },
+  {
+    q_en:'True or False: Servers provide services to other computers.',
+    options_en:['True','False'],
+    ans:0,
+    exp_en:'Servers host resources and services for clients/computers.',
+    q_hi:'सही या गलत: सर्वर अन्य कंप्यूटरों को सेवाएँ प्रदान करते हैं।',
+    options_hi:['सही','गलत'],
+    exp_hi:'सर्वर क्लाइंट्स को सेवाएँ और रिसोर्सेज प्रदान करते हैं।'
+  }
+];
+
+function renderQuestions(){
+  const qdiv = document.getElementById('questions');
+  qdiv.innerHTML='';
+  const useHindi = hindiVisible;
+  data.forEach((item, idx)=>{
+    const qtext = useHindi ? item.q_hi : item.q_en;
+    const opts = useHindi ? item.options_hi : item.options_en;
+    const div = document.createElement('div');
+    div.className='q';
+    const id = 'q'+idx;
+    let html = `<strong>${idx+1}. ${qtext}</strong><div>`;
+    opts.forEach((opt,i)=>{
+      html += `<label class="option"><input type="radio" name="${id}" value="${i}"> ${opt}</label>`;
+    });
+    html += `</div><div id="exp-${idx}" style="display:none"><small class="explain"></small></div>`;
+    div.innerHTML = html;
+    qdiv.appendChild(div);
+  });
+}
+renderQuestions();
+
+function checkAnswers(){
+  let score=0;
+  const useHindi = hindiVisible;
+  data.forEach((item,idx)=>{
+    const name = 'q'+idx;
+    const selected = document.querySelector(`input[name="${name}"]:checked`);
+    const correct = item.ans;
+    const exp = useHindi ? item.exp_hi : item.exp_en;
+    const expDiv = document.getElementById('exp-'+idx);
+    const small = expDiv.querySelector('.explain');
+    if(selected){
+      const val = parseInt(selected.value,10);
+      if(val === correct) score++;
+      small.textContent = (val===correct ? (useHindi?'सही — ':'Correct — ') : (useHindi?'गलत — ':'Incorrect — ')) + exp;
+    } else {
+      small.textContent = (useHindi?'उत्तर नहीं दिया — ':'No answer given — ') + exp;
+    }
+    expDiv.style.display = 'block';
+  });
+  const sc = document.getElementById('score');
+  sc.style.display='block';
+  sc.innerHTML = useHindi ? `<strong>आपका स्कोर: ${score} / ${data.length}</strong>` : `<strong>Your Score: ${score} / ${data.length}</strong>`;
+  sc.innerHTML += useHindi ? `<div>प्रत्येक प्रश्न के नीचे स्पष्टीकरण देखें।</div>` : `<div>See explanations under each question.</div>`;
+  window.scrollTo({top:document.getElementById('quiz').offsetTop,behavior:'smooth'});
+}
+
+/* Re-render questions when language toggles */
+const obs = new MutationObserver(()=> renderQuestions());
+obs.observe(document.querySelector('body'),{attributes:true,subtree:false});
+</script>
+</body>
+</html>

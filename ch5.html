@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Chapter 5 - MS Paint</title>
+<style>
+  :root{--accent:#1b6fb0;--bg:#f7fbff}
+  body{font-family:Arial,Helvetica,sans-serif;margin:0;background:var(--bg);color:#123}
+  header{background:linear-gradient(90deg,#4b9df8,#97d7ff);color:#fff;padding:18px;text-align:center}
+  main{max-width:920px;margin:18px auto;padding:18px}
+  .card{background:#fff;border-left:6px solid var(--accent);padding:18px;margin:14px 0;border-radius:8px}
+  .controls{display:flex;justify-content:flex-end}
+  .lang-toggle{background:var(--accent);color:#fff;padding:8px 12px;border-radius:6px;border:none;cursor:pointer}
+  .hindi{display:none}
+  .img-ref img{max-width:100%;border-radius:8px}
+  .quiz{background:#f4f8ff;padding:12px;border-radius:8px;margin-top:12px}
+  label.option{display:block;padding:6px;border-radius:6px;border:1px solid #e6f1ff;margin:6px 0}
+</style>
+</head>
+<body>
+<header><h1>Class 6 — Computer</h1><p>Chapter 5 — MS Paint</p></header>
+<main>
+ <div class="controls"><button id="toggleBtn" class="lang-toggle" onclick="toggleLanguage()">Switch to हिंदी</button></div>
+ <section class="card">
+   <h2>🖌️ MS Paint — Tools & Editing</h2>
+   <div class="english">
+     <p><strong>Overview:</strong> MS Paint provides simple drawing tools: Pencil, Brush, Shapes, Fill, Text, Eraser. Use Resize & Crop to adjust images. Save as PNG/JPEG.</p>
+     <h3>Tool Details</h3>
+     <ul>
+       <li><strong>Pencil:</strong> Draw thin freehand lines.</li>
+       <li><strong>Brush:</strong> Different stroke styles and sizes.</li>
+       <li><strong>Fill:</strong> Fill closed shapes with color.</li>
+       <li><strong>Text:</strong> Add and edit text boxes in images.</li>
+     </ul>
+     <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/en/6/6b/Microsoft_Paint_screenshot.png" alt="MS Paint"></div>
+   </div>
+   <div class="hindi">
+     <p><strong>ओवरव्यू:</strong> MS Paint सरल ड्राइंग टूल देता है: पेंसिल, ब्रश, शेप, फिल, टेक्स्ट, इरेज़र। Resize और Crop से इमेज संपादित करें। PNG/JPEG में सहेजें।</p>
+     <h3>टूल विवरण</h3>
+     <ul>
+       <li><strong>पेंसिल:</strong> पतली फ्रीहेंड लाइने खींचें।</li>
+       <li><strong>ब्रश:</strong> अलग ब्रश आकार और स्टाइल।</li>
+       <li><strong>फिल:</strong> बंद शेप्स को रंग से भरें।</li>
+       <li><strong>टेक्स्ट:</strong> इमेज में टेक्स्ट जोड़ें और एडिट करें।</li>
+     </ul>
+     <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/en/6/6b/Microsoft_Paint_screenshot.png" alt="MS पेंट"></div>
+   </div>
+
+   <div class="quiz" id="quiz5">
+     <h3>Chapter 5 Quiz — 10 Questions</h3>
+     <div id="questions5"></div>
+     <button class="btn-check" onclick="check5()">Check Answers</button>
+     <div id="score5" class="result" style="display:none"></div>
+   </div>
+ </section>
+</main>
+<footer style="text-align:center;padding:12px;background:#1b6fb0;color:#fff;margin-top:18px">&copy; 2025 RMS Govindpur — Chapter 5</footer>
+
+<script>
+let hindiVisible=false;
+function toggleLanguage(){hindiVisible=!hindiVisible;document.querySelectorAll('.hindi').forEach(e=>e.style.display=hindiVisible?'block':'none');document.querySelectorAll('.english').forEach(e=>e.style.display=hindiVisible?'none':'block');document.getElementById('toggleBtn').textContent=hindiVisible?'Switch to English':'Switch to हिंदी'; render5();}
+
+const data5=[
+ {q_en:'Which tool fills a closed area with color?', options_en:['Eraser','Fill/Bucket','Pencil','Text'], ans:1, exp_en:'Fill (bucket) fills closed areas.', q_hi:'कौन सा टूल बंद क्षेत्र को रंग से भरता है?', options_hi:['इरेज़र','फिल/बकेट','पेंसिल','टेक्स्ट'], exp_hi:'फिल (बकेट) बंद क्षेत्रों को भरता है।'},
+ {q_en:'How to add text to an image in Paint?', options_en:['Use Text tool','Use Eraser','Use Fill','Use Select'], ans:0, exp_en:'Text tool inserts editable text boxes.', q_hi:'Paint में इमेज में टेक्स्ट कैसे जोड़ें?', options_hi:['टेक्स्ट टूल का उपयोग','इरेज़र का उपयोग','फिल का उपयोग','Select का उपयोग'], exp_hi:'Text टूल से टेक्स्ट डाला जाता है।'},
+ {q_en:'True or False: You can resize images in Paint.', options_en:['True','False'], ans:0, exp_en:'Use Resize to change dimensions.', q_hi:'सही या गलत: Paint में इमेज का आकार बदल सकते हैं।', options_hi:['सही','गलत'], exp_hi:'Resize से आकार बदला जा सकता है।'},
+ {q_en:'Which format is lossless commonly used for simple graphics?', options_en:['JPEG','PNG','MP3','MP4'], ans:1, exp_en:'PNG is lossless and good for graphics.', q_hi:'सरल ग्राफिक्स के लिए सामान्यत: कौन सा फॉर्मेट lossless है?', options_hi:['JPEG','PNG','MP3','MP4'], exp_hi:'PNG lossless होता है।'},
+ {q_en:'Which tool erases parts of the drawing?', options_en:['Brush','Eraser','Text','Fill'], ans:1, exp_en:'Eraser removes drawn parts.', q_hi:'कौन सा टूल चित्र के हिस्से मिटाता है?', options_hi:['ब्रश','इरेज़र','टेक्स्ट','फिल'], exp_hi:'इरेज़र चित्र के भाग हटाता है।'},
+ {q_en:'What is select used for?', options_en:['Move or crop area','Change color','Insert text','Add shapes'], ans:0, exp_en:'Select lets you move or crop a chosen area.', q_hi:'Select का उपयोग किसके लिए होता है?', options_hi:['क्षेत्र को स्थानांतरित/क्रॉप करना','रंग बदलना','टेक्स्ट डालना','शेप जोड़ना'], exp_hi:'Select चुने क्षेत्र को मूव या क्रॉप करने देता है।'},
+ {q_en:'True or False: Paint supports layers like advanced editors.', options_en:['True','False'], ans:1, exp_en:'Basic Paint does not support layers as advanced editors do.', q_hi:'सही या गलत: Paint में लेयर्स सपोर्ट होते हैं जैसे उन्नत संपादक में।', options_hi:['सही','गलत'], exp_hi:'बेसिक Paint में layers नहीं होते।'},
+ {q_en:'Which tool draws straight lines easily?', options_en:['Line/Shapes tool','Pencil','Eraser','Fill'], ans:0, exp_en:'Line or Shapes tool draws straight lines.', q_hi:'कौन सा टूल सीधे लाइन आसानी से बनाता है?', options_hi:['Line/Shapes टूल','पेंसिल','इरेज़र','फिल'], exp_hi:'Line/Shapes सीधे लाइन बनाते हैं।'},
+ {q_en:'How to save an image for web with small size?', options_en:['Save as BMP','Save as PNG','Save as GIF or compressed JPEG','Open as TXT'], ans:2, exp_en:'Use GIF/optimized JPEG or PNG with compression.', q_hi:'वेब के लिए छोटी फाइल साइज में इमेज कैसे सेव करें?', options_hi:['BMP में सेव करें','PNG में सेव करें','GIF या compressed JPEG में सेव करें','TXT में खोलें'], exp_hi:'GIF या compressed JPEG छोटी फाइल बनाते हैं।'},
+ {q_en:'True or False: MS Paint is useful to learn basic mouse control.', options_en:['True','False'], ans:0, exp_en:'Paint helps practice mouse and simple editing skills.', q_hi:'सही या गलत: MS Paint माउस नियंत्रण सीखने हेतु उपयोगी है।', options_hi:['सही','गलत'], exp_hi:'Paint माउस और बेसिक एडिटिंग सिखाता है।'}
+];
+
+function render5(){
+ const qdiv=document.getElementById('questions5'); qdiv.innerHTML=''; const useHindi=hindiVisible;
+ data5.forEach((it,i)=>{
+  const q = useHindi?it.q_hi:it.q_en; const opts = useHindi?it.options_hi:it.options_en;
+  const div=document.createElement('div'); div.className='q'; let html=`<strong>${i+1}. ${q}</strong><div>`;
+  opts.forEach((o,idx)=> html+=`<label class="option"><input type="radio" name="q5_${i}" value="${idx}"> ${o}</label>`);
+  html+=`</div><div id="exp5_${i}" style="display:none"><small class="explain"></small></div>`; div.innerHTML=html; qdiv.appendChild(div);
+ });
+}
+render5();
+
+function check5(){ let score=0; const useHindi=hindiVisible;
+ data5.forEach((it,i)=>{ const sel=document.querySelector(`input[name="q5_${i}"]:checked`); const expDiv=document.getElementById(`exp5_${i}`); const expText = useHindi? it.exp_hi: it.exp_en;
+  if(sel){ const val=parseInt(sel.value,10); if(val===it.ans) score++; expDiv.querySelector('.explain').textContent = (val===it.ans?(useHindi?'सही — ':'Correct — '):(useHindi?'गलत — ':'Incorrect — ')) + expText; }
+  else expDiv.querySelector('.explain').textContent = (useHindi?'उत्तर नहीं दिया — ':'No answer — ') + expText; expDiv.style.display='block';
+ });
+ document.getElementById('score5').style.display='block'; document.getElementById('score5').innerHTML = hindiVisible? `<strong>आपका स्कोर: ${score}/${data5.length}</strong>`:`<strong>Your Score: ${score}/${data5.length}</strong>`; window.scrollTo({top:document.getElementById('quiz5').offsetTop,behavior:'smooth'});
+}
+</script>
+</body>
+</html>

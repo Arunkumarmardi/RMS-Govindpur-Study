@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Chapter 10 - Computer Languages</title>
+<style>
+ :root{--accent:#1b6fb0;--bg:#f7fbff}
+ body{font-family:Arial,Helvetica,sans-serif;margin:0;background:var(--bg);color:#123}
+ header{background:linear-gradient(90deg,#4b9df8,#97d7ff);color:#fff;padding:18px;text-align:center}
+ main{max-width:920px;margin:18px auto;padding:18px}
+ .card{background:#fff;border-left:6px solid var(--accent);padding:18px;margin:14px 0;border-radius:8px}
+ .controls{display:flex;justify-content:flex-end}
+ .lang-toggle{background:var(--accent);color:#fff;padding:8px 12px;border-radius:6px;border:none;cursor:pointer}
+ .hindi{display:none}
+ .quiz{background:#f4f8ff;padding:12px;border-radius:8px;margin-top:12px}
+</style>
+</head>
+<body>
+<header><h1>Class 6 — Computer</h1><p>Chapter 10 — Computer Languages</p></header>
+<main>
+ <div class="controls"><button id="toggleBtn" class="lang-toggle" onclick="toggleLanguage()">Switch to हिंदी</button></div>
+ <section class="card">
+   <h2>🧠 Computer Languages</h2>
+   <div class="english">
+     <p>Languages: Machine code (binary), Assembly (mnemonics), High-level (Python, Java, C++). Web: HTML/CSS/JavaScript.</p>
+     <ul>
+       <li>Machine language is directly understood by CPU.</li>
+       <li>High-level languages are easier for humans and require compilers/interpreters.</li>
+     </ul>
+     <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/C_Programming_Language.svg" alt="Programming"></div>
+   </div>
+   <div class="hindi">
+     <p>भाषाएँ: मशीन कोड (बाइनरी), असेंबली (mnemonics), हाई-लेवल (Python, Java, C++). वेब: HTML/CSS/JavaScript.</p>
+     <ul>
+       <li>मशीन भाषा CPU द्वारा सीधे समझी जाती है।</li>
+       <li>हाई-लेवल भाषाएँ मानव के अनुकूल हैं और इन्हें कंपाइल/इंटरप्रेट किया जाता है।</li>
+     </ul>
+     <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/1/1f/C_Programming_Language.svg" alt="प्रोग्रामिंग"></div>
+   </div>
+
+   <div class="quiz" id="quiz10">
+     <h3>Chapter 10 Quiz — 10 Questions</h3>
+     <div id="questions10"></div>
+     <button class="btn-check" onclick="check10()">Check Answers</button>
+     <div id="score10" class="result" style="display:none"></div>
+   </div>
+ </section>
+</main>
+<footer style="text-align:center;padding:12px;background:#1b6fb0;color:#fff;margin-top:18px">&copy; 2025 RMS Govindpur — Chapter 10</footer>
+
+<script>
+let hindiVisible=false;
+function toggleLanguage(){hindiVisible=!hindiVisible;document.querySelectorAll('.hindi').forEach(e=>e.style.display=hindiVisible?'block':'none');document.querySelectorAll('.english').forEach(e=>e.style.display=hindiVisible?'none':'block');document.getElementById('toggleBtn').textContent=hindiVisible?'Switch to English':'Switch to हिंदी'; render10();}
+
+const data10=[
+ {q_en:'Machine language uses which symbols?', options_en:['Words','Binary (0 & 1)','Images','Colors'], ans:1, exp_en:'Machine language uses binary digits.', q_hi:'मशीन भाषा किस प्रतीक का उपयोग करती है?', options_hi:['शब्द','बाइनरी (0 व 1)','छवियाँ','रंग'], exp_hi:'मशीन भाषा बाइनरी का उपयोग करती है।'},
+ {q_en:'Which is a high-level language?', options_en:['Assembly','Binary','Python','Machine code'], ans:2, exp_en:'Python is a high-level language.', q_hi:'कौन सी हाई-लेवल भाषा है?', options_hi:['Assembly','Binary','Python','Machine code'], exp_hi:'Python हाई-लेवल भाषा है।'},
+ {q_en:'True or False: HTML is a programming language?', options_en:['True','False'], ans:1, exp_en:'HTML is a markup language, not a programming language.', q_hi:'सही या गलत: HTML एक प्रोग्रामिंग भाषा है?', options_hi:['सही','गलत'], exp_hi:'HTML मार्कअप भाषा है।'},
+ {q_en:'What translates high-level code to machine code?', options_en:['Assembler','Compiler/Interpreter','Monitor','Printer'], ans:1, exp_en:'Compilers or interpreters translate code.', q_hi:'हाई-लेवल कोड को मशीन कोड में कौन बदलता है?', options_hi:['Assembler','Compiler/Interpreter','Monitor','Printer'], exp_hi:'कंपाइलर/इंटरप्रेटर कोड को अनुवादित करते हैं।'},
+ {q_en:'Which language is used for page styling?', options_en:['HTML','CSS','JavaScript','C++'], ans:1, exp_en:'CSS is used for styles.' , q_hi:'पेज स्टाइलिंग के लिए किस भाषा का उपयोग होता है?', options_hi:['HTML','CSS','JavaScript','C++'], exp_hi:'CSS स्टाइल्स के लिए है।'},
+ {q_en:'True or False: Assembly language is closer to human language than machine code.', options_en:['True','False'], ans:0, exp_en:'Assembly uses mnemonics easier than raw binary.', q_hi:'सही या गलत: असेंबली भाषा मशीन कोड से मानव भाषा के करीब है?', options_hi:['सही','गलत'], exp_hi:'असेंबली में mnemonics होते हैं।'},
+ {q_en:'Which is used to make interactive webpages?', options_en:['HTML','CSS','JavaScript','SQL'], ans:2, exp_en:'JavaScript adds interactivity.', q_hi:'इंटरैक्टिव वेबपेज बनाने के लिए कौन सा उपयोग होता है?', options_hi:['HTML','CSS','JavaScript','SQL'], exp_hi:'JavaScript इंटरएक्टिविटी जोड़ता है।'},
+ {q_en:'Which translates assembly to machine code?', options_en:['Interpreter','Assembler','Compiler','Linker'], ans:1, exp_en:'Assembler converts assembly to machine code.', q_hi:'असेंबली को मशीन कोड में कौन बदलता है?', options_hi:['Interpreter','Assembler','Compiler','Linker'], exp_hi:'Assembler असेंबली को मशीन कोड में बदलता है।'},
+ {q_en:'What is a program?', options_en:['Hardware part','Set of instructions','Picture','Storage device'], ans:1, exp_en:'A program is a set of instructions.', q_hi:'प्रोग्राम क्या है?', options_hi:['हार्डवेयर भाग','निर्देशों का सेट','तस्वीर','स्टोरेज डिवाइस'], exp_hi:'प्रोग्राम निर्देशों का सेट होता है।'},
+ {q_en:'True or False: SQL is mainly for databases.', options_en:['True','False'], ans:0, exp_en:'SQL is used to manage relational databases.', q_hi:'सही या गलत: SQL मुख्य रूप से डेटाबेस के लिए है?', options_hi:['सही','गलत'], exp_hi:'SQL रिलेशनल डेटाबेस को मैनेज करने के लिए है।'}
+];
+
+function render10(){ const qdiv=document.getElementById('questions10'); qdiv.innerHTML=''; const useHindi=hindiVisible;
+ data10.forEach((it,i)=>{ const q=useHindi?it.q_hi:it.q_en; const opts=useHindi?it.options_hi:it.options_en; const div=document.createElement('div'); div.className='q'; let html=`<strong>${i+1}. ${q}</strong><div>`; opts.forEach((o,idx)=> html+=`<label class="option"><input type="radio" name="q10_${i}" value="${idx}"> ${o}</label>`); html+=`</div><div id="exp10_${i}" style="display:none"><small class="explain"></small></div>`; div.innerHTML=html; qdiv.appendChild(div); });
+}
+render10();
+
+function check10(){ let score=0; const useHindi=hindiVisible;
+ data10.forEach((it,i)=>{ const sel=document.querySelector(`input[name="q10_${i}"]:checked`); const expDiv=document.getElementById(`exp10_${i}`); const expText = useHindi? it.exp_hi: it.exp_en; if(sel){ const val=parseInt(sel.value,10); if(val===it.ans) score++; expDiv.querySelector('.explain').textContent=(val===it.ans?(useHindi?'सही — ':'Correct — '):(useHindi?'गलत — ':'Incorrect — ')) + expText; } else expDiv.querySelector('.explain').textContent=(useHindi?'उत्तर नहीं दिया — ':'No answer — ') + expText; expDiv.style.display='block'; }); document.getElementById('score10').style.display='block'; document.getElementById('score10').innerHTML = hindiVisible? `<strong>आपका स्कोर: ${score}/${data10.length}</strong>`:`<strong>Your Score: ${score}/${data10.length}</strong>`; window.scrollTo({top:document.getElementById('quiz10').offsetTop,behavior:'smooth'}); }
+</script>
+</body>
+</html>

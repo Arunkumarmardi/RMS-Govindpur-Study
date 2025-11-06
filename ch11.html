@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Chapter 11 - Internet & Email (Class 6)</title>
+<style>
+:root{--accent:#1b6fb0;--bg:#f7fbff}
+body{font-family:Arial,Helvetica,sans-serif;margin:0;background:var(--bg);color:#123;line-height:1.5}
+header{background:linear-gradient(90deg,#4b9df8,#97d7ff);color:#fff;padding:18px;text-align:center}
+nav{background:#222;padding:10px;text-align:center}
+nav a{color:#fff;margin:0 10px;text-decoration:none;font-weight:600}
+main{max-width:980px;margin:18px auto;padding:0 18px 40px}
+.controls{display:flex;justify-content:flex-end;padding:12px 18px;gap:10px;align-items:center}
+.lang-toggle{background:var(--accent);color:#fff;padding:8px 12px;border-radius:6px;border:none;cursor:pointer;font-weight:700}
+.card{background:#fff;border-left:6px solid var(--accent);padding:18px;margin:14px 0;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+.card h2{color:var(--accent);margin:0 0 10px}
+.meta{font-size:0.95rem;color:#3a5a7a;margin-bottom:8px}
+.english p,.english ul,.english ol{margin:8px 0}
+.hindi p,.hindi ul,.hindi ol{margin:8px 0;color:#2b2b2b}
+.hindi{display:none}
+.img-ref{text-align:center;margin-top:12px}
+.img-ref img{max-width:100%;height:auto;border-radius:8px;box-shadow:0 4px 10px rgba(0,0,0,0.08)}
+.quiz{margin-top:14px;padding:12px;border-radius:8px;background:#f4f8ff;border:1px solid rgba(27,111,176,0.08)}
+.quiz h3{margin:0 0 8px}
+.options label{display:block;margin:6px 0;cursor:pointer}
+.btn{background:var(--accent);color:#fff;padding:8px 12px;border:none;border-radius:6px;cursor:pointer;font-weight:700}
+.result{margin-top:10px;padding:10px;border-radius:6px;background:#fffef6;border-left:4px solid #ffcc33}
+.footer{background:var(--accent);color:#fff;text-align:center;padding:12px;margin-top:12px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Chapter 11 — Internet & Email</h1>
+  <p>Class 6 — RMS Govindpur</p>
+</header>
+
+<nav>
+  <a href="index.html">Home</a>
+  <a href="study-materials.html">Study Materials</a>
+</nav>
+
+<div class="controls">
+  <label style="font-size:0.95rem;color:#234;margin-right:8px">Language:</label>
+  <button class="lang-toggle" id="toggleBtn" onclick="toggleLanguage()">Switch to हिंदी</button>
+</div>
+
+<main>
+  <section class="card">
+    <h2>Internet & Email — Detailed Explanation</h2>
+    <div class="english">
+      <p class="meta"><strong>Overview:</strong> The Internet is a global network of computers that communicate using standard protocols. It allows access to websites, email, files, and online services. Email is a fast and reliable way to send messages electronically.</p>
+
+      <h3>How the Internet Works (Basic)</h3>
+      <p>Computers connect to the internet via Internet Service Providers (ISP) using wired or wireless links. Data travels across networks in small units called packets. Protocols like TCP/IP define how packets are addressed and routed between devices.</p>
+
+      <h3>Websites and Browsers</h3>
+      <p>A website is a collection of web pages hosted on a web server. Web browsers (Chrome, Firefox, Edge) request web pages by their URL and render the HTML, CSS, and JavaScript to show content. A URL like <code>https://www.example.com/page</code> points to a specific resource.</p>
+
+      <h3>Search Engines and Finding Information</h3>
+      <p>Search engines (Google, Bing) index webpages and help users find information. Use keywords, quotes for exact phrases, and site: to search within one website. Evaluate sources for reliability.</p>
+
+      <h3>Email Basics</h3>
+      <p>Email (electronic mail) requires an email address (username@domain). Basic parts of an email: To (recipient), Cc, Bcc, Subject, Body, Attachments. Attachments can include documents and images. Keep attachments small and scan for viruses.</p>
+
+      <h3>Safety and Etiquette</h3>
+      <ul>
+        <li>Use strong passwords and change them regularly.</li>
+        <li>Don’t open suspicious attachments or click unknown links.</li>
+        <li>Be polite in emails; use clear subject lines and greetings.</li>
+        <li>Verify sources and do not share personal data publicly.</li>
+      </ul>
+
+      <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Internet_globe_icon.png" alt="Internet Globe"></div>
+    </div>
+
+    <div class="hindi">
+      <p class="meta"><strong>ओवरव्यू:</strong> इंटरनेट कंप्यूटरों का वैश्विक नेटवर्क है जो मानक प्रोटोकॉल का उपयोग करके संवाद करता है। यह वेबसाइट, ईमेल, फ़ाइलों और ऑनलाइन सेवाओं तक पहुंच प्रदान करता है। ईमेल संदेशों को इलेक्ट्रॉनिक रूप से भेजने का एक तेज़ तरीका है।</p>
+
+      <h3>इंटरनेट कैसे काम करता है (सरल)</h3>
+      <p>कंप्यूटर इंटरनेट से ISP (इंटरनेट सर्विस प्रोवाइडर) के माध्यम से तार या वायरलेस कनेक्शन से जुड़ते हैं। डेटा छोटे पैकेट्स में यात्रा करता है। TCP/IP जैसे प्रोटोकॉल यह तय करते हैं कि पैकेट्स को कैसे पहचाना और रूट किया जाए।</p>
+
+      <h3>वेबसाइट और ब्राउज़र</h3>
+      <p>एक वेबसाइट वेब पेजों का संग्रह है जो एक वेब सर्वर पर होस्ट होती है। वेब ब्राउज़र (Chrome, Firefox) URL के माध्यम से पृष्ठ अनुरोध करते हैं और HTML, CSS, JavaScript को रेंडर करके दिखाते हैं। उदाहरण: <code>https://www.example.com/page</code></p>
+
+      <h3>सर्च इंजन और जानकारी ढूँढना</h3>
+      <p>सर्च इंजन (Google, Bing) वेबपेजों को इंडेक्स करते हैं और उपयोगकर्ताओं को जानकारी खोजने में मदद करते हैं। कीवर्ड का उपयोग करें, सटीक वाक्यांश के लिए कोट्स का उपयोग करें, और site: से किसी एक साइट के भीतर खोजें। स्रोतों की विश्वसनीयता जांचें।</p>
+
+      <h3>ईमेल के बुनियादी बातें</h3>
+      <p>ईमेल के लिए एक ईमेल पता चाहिए (username@domain)। ईमेल के हिस्से: To (प्राप्तकर्ता), Cc, Bcc, Subject, Body, Attachments। अटैचमेंट में दस्तावेज़ और इमेज हो सकते हैं। अटैचमेंट छोटे रखें और वायरस के लिए स्कैन करें।</p>
+
+      <h3>सुरक्षा और शिष्टाचार</h3>
+      <ul>
+        <li>मजबूत पासवर्ड का उपयोग करें और समय-समय पर बदलें।</li>
+        <li>संदिग्ध अटैचमेंट न खोलें और अनजान लिंक पर क्लिक न करें।</li>
+        <li>ईमेल में शालीन रहें; स्पष्ट विषय और अभिवादन का उपयोग करें।</li>
+        <li>स्रोत सत्यापित करें और निजी जानकारी सार्वजनिक न करें।</li>
+      </ul>
+
+      <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Internet_globe_icon.png" alt="इंटरनेट"></div>
+    </div>
+  </section>
+
+  <section class="card quiz">
+    <h3>Interactive Quiz — Chapter 11 (10 questions)</h3>
+    <div id="questions"></div>
+    <button class="btn" onclick="checkAnswers()">Check Answers</button>
+    <div id="result" class="result" style="display:none"></div>
+  </section>
+</main>
+
+<footer class="footer">&copy; 2025 RMS Govindpur</footer>
+
+<script>
+const toggleBtn = document.getElementById('toggleBtn');
+let hindiVisible = false;
+function toggleLanguage(){
+  hindiVisible = !hindiVisible;
+  document.querySelectorAll('.hindi').forEach(el=>el.style.display = hindiVisible? 'block':'none');
+  document.querySelectorAll('.english').forEach(el=>el.style.display = hindiVisible? 'none':'block');
+  toggleBtn.textContent = hindiVisible? 'Switch to English' : 'Switch to हिंदी';
+  renderQuestions();
+}
+
+// Quiz data
+const quizData = [
+  {en:{question:"What does URL stand for?", options:["Uniform Resource Locator","Universal Remote Link","Uniform Request Line","Unique Resource List"], explanation:"URL means Uniform Resource Locator — the web address of a resource."},
+   hi:{question:"URL का पूरा नाम क्या है?", options:["Uniform Resource Locator","Universal Remote Link","Uniform Request Line","Unique Resource List"], explanation:"URL का मतलब Uniform Resource Locator होता है — यह किसी वेब संसाधन का पता है।"}, correct:0},
+  {en:{question:"Which protocol is secure for websites?", options:["http","ftp","https","smtp"], explanation:"HTTPS encrypts data between browser and server."},
+   hi:{question:"किस प्रोटोकॉल से वेबसाइट सुरक्षित होती है?", options:["http","ftp","https","smtp"], explanation:"HTTPS ब्राउज़र और सर्वर के बीच डेटा को एन्क्रिप्ट करता है।"}, correct:2},
+  {en:{question:"Which is NOT a web browser?", options:["Chrome","Firefox","Edge","Gmail"], explanation:"Gmail is an email service, not a browser."},
+   hi:{question:"निम्न में से कौन वेब ब्राउज़र नहीं है?", options:["Chrome","Firefox","Edge","Gmail"], explanation:"Gmail एक ईमेल सेवा है, ब्राउज़र नहीं।"}, correct:3},
+  {en:{question:"What is the primary use of a search engine?", options:["Play music","Find information on the web","Edit images","Write code"], explanation:"Search engines help users find information on the internet."},
+   hi:{question:"सर्च इंजन का मुख्य उपयोग क्या है?", options:["संगीत चलाना","वेब पर जानकारी ढूँढना","इमेज संपादित करना","कोड लिखना"], explanation:"सर्च इंजन इंटरनेट पर जानकारी खोजने में मदद करते हैं।"}, correct:1},
+  {en:{question:"Which part of an email contains the main topic?", options:["To","Subject","Body","Signature"], explanation:"Subject summarises the main topic of the email."},
+   hi:{question:"ईमेल का कौन सा भाग मुख्य विषय बताता है?", options:["To","Subject","Body","Signature"], explanation:"Subject ईमेल का मुख्य विषय बताता है।"}, correct:1},
+  {en:{question:"What should you check before clicking a link in email?", options:["Sender and URL","Color of the text","Font size","Attachment size"], explanation:"Always verify sender and link URL for safety."},
+   hi:{question:"ईमेल में लिंक पर क्लिक करने से पहले क्या जांचें?", options:["प्रेषक और URL","टेक्स्ट का रंग","फ़ॉन्ट आकार","अटैचमेंट का आकार"], explanation:"सुरक्षा के लिए प्रेषक और लिंक URL सत्यापित करें।"}, correct:0},
+  {en:{question:"Which folder usually contains unwanted or suspicious emails?", options:["Inbox","Sent","Drafts","Spam"], explanation:"Spam folder holds unsolicited or suspicious emails."},
+   hi:{question:"सामान्यतः किस फ़ोल्डर में अवांछित ईमेल होते हैं?", options:["Inbox","Sent","Drafts","Spam"], explanation:"Spam फ़ोल्डर में अवांछित/संदिग्ध ईमेल होते हैं।"}, correct:3},
+  {en:{question:"What does 'attach' mean in email?", options:["Add a file to the email","Delete the email","Change font","Send to all contacts"], explanation:"Attach means adding a file to send with the email."},
+   hi:{question:"ईमेल में 'attach' का क्या अर्थ है?", options:["ईमेल में फ़ाइल जोड़ना","ईमेल हटाना","फ़ॉन्ट बदलना","सभी को भेजना"], explanation:"Attach का अर्थ है ईमेल के साथ फ़ाइल जोड़ना।"}, correct:0},
+  {en:{question:"Which is a good email etiquette?","options":["Use all caps for emphasis","Write clear subject and greeting","Share passwords","Send chain letters"], explanation:"Use clear subjects and polite greetings."},
+   hi:{question:"कौन सा ईमेल शिष्टाचार अच्छा है?", options:["जोर देने के लिए सभी CAPS में लिखना","स्पष्ट विषय और अभिवादन लिखना","पासवर्ड साझा करना","चेन लेटर भेजना"], explanation:"स्पष्ट विषय और विनम्र अभिवादन उपयोग करें।"}, correct:1},
+  {en:{question:"If an email asks for your bank password, you should:","options":["Send it","Ignore/report it","Reply with details","Forward to friends"], explanation:"Never share passwords; report such emails as phishing."},
+   hi:{question":"यदि किसी ईमेल में आपका बैंक पासवर्ड माँगा जाए तो आपको क्या करना चाहिए?", options:["भेज दें","नज़रअंदाज़/रिपोर्ट करें","विवरण के साथ जवाब दें","दोस्तों को फ़ॉरवर्ड करें"], explanation:"कभी भी पासवर्ड साझा न करें; ऐसे ईमेल की रिपोर्ट करें।"}, correct:1},
+];
+
+function renderQuestions(){
+  const container = document.getElementById('questions');
+  container.innerHTML = '';
+  const lang = hindiVisible ? 'hi' : 'en';
+  quizData.forEach((q, idx)=>{
+    const div = document.createElement('div');
+    div.style.marginBottom = '10px';
+    div.innerHTML = `<strong>Q${idx+1}. ${q[lang].question}</strong>`;
+    const opts = document.createElement('div');
+    opts.className = 'options';
+    q[lang].options.forEach((opt,i)=>{
+      const label = document.createElement('label');
+      label.innerHTML = `<input type="radio" name="q${idx}" value="${i}"> ${opt}`;
+      opts.appendChild(label);
+    });
+    div.appendChild(opts);
+    container.appendChild(div);
+  });
+  document.getElementById('result').style.display='none';
+}
+
+function checkAnswers(){
+  const lang = hindiVisible ? 'hi' : 'en';
+  let correct=0; let feedback='';
+  quizData.forEach((q,idx)=>{
+    const els = document.getElementsByName('q'+idx);
+    let sel = -1;
+    for(let i=0;i<els.length;i++) if(els[i].checked) sel = parseInt(els[i].value);
+    const isCorrect = sel === q.correct;
+    if(isCorrect) correct++;
+    feedback += `<div style="margin-bottom:8px"><strong>Q${idx+1}.</strong> ${q[lang].question}<br>`;
+    feedback += `Your answer: <em>${ sel>=0 ? q[lang].options[sel] : '<i>No answer</i>' }</em><br>`;
+    feedback += `Result: <strong>${ isCorrect ? (lang==='en'?'Correct':'सही') : (lang==='en'?'Incorrect':'गलत') }</strong><br>`;
+    feedback += `<div style="color:#006699;margin-top:4px"><strong>${ lang==='en'?'Explanation':'व्याख्या' }:</strong> ${q[lang].explanation}</div></div>`;
+  });
+  const res = document.getElementById('result');
+  res.style.display='block';
+  res.innerHTML = `<strong>${ lang==='en'?'Score':'स्कोर' }: ${correct} / ${quizData.length}</strong><hr>${feedback}`;
+}
+
+window.addEventListener('load', ()=>{ renderQuestions(); });
+</script>
+</body>
+</html>

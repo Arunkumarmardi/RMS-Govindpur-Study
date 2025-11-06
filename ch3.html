@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+<head><meta charset="utf-8"/><meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Chapter 3 - MS Word Basics</title>
+<style>
+  :root{--accent:#1b6fb0;--bg:#f7fbff}
+  body{font-family:Arial,Helvetica,sans-serif;margin:0;background:var(--bg);color:#123;line-height:1.5}
+  header{background:linear-gradient(90deg,#4b9df8,#97d7ff);color:#fff;padding:18px;text-align:center}
+  main{max-width:920px;margin:18px auto;padding:18px}
+  .card{background:#fff;border-left:6px solid var(--accent);padding:18px;margin:14px 0;border-radius:8px;box-shadow:0 6px 18px rgba(0,0,0,0.06)}
+  .controls{display:flex;justify-content:flex-end;gap:10px;margin-bottom:12px}
+  .lang-toggle{background:var(--accent);color:#fff;padding:8px 12px;border-radius:6px;border:none;cursor:pointer;font-weight:700}
+  .hindi{display:none}
+  .img-ref img{max-width:100%;border-radius:8px}
+  .quiz{margin-top:14px;padding:12px;background:#f4f8ff;border-radius:8px}
+  label.option{display:block;padding:6px;border-radius:6px;border:1px solid #e6f1ff;margin:6px 0;cursor:pointer}
+  .btn-check{background:#1b6fb0;color:#fff;padding:8px 12px;border:none;border-radius:6px;cursor:pointer}
+  .result{margin-top:10px;padding:10px;border-radius:6px;background:#fffef6;border-left:4px solid #ffcc33}
+</style>
+</head>
+<body>
+<header><h1>Class 6 — Computer</h1><p>Chapter 3 — MS Word Basics</p></header>
+<main>
+  <div class="controls">
+    <button id="toggleBtn" class="lang-toggle" onclick="toggleLanguage()">Switch to हिंदी</button>
+  </div>
+  <section class="card">
+    <h2>📝 MS Word — Create, Format, Save</h2>
+    <div class="english">
+      <p><strong>Create & Save:</strong> Open Word → New → Type → File → Save As → choose .docx or .pdf. Use descriptive filenames.</p>
+      <h3>Formatting</h3>
+      <ul>
+        <li>Font, Size, Bold/Italic/Underline</li>
+        <li>Alignment, Line spacing, Bullets & Numbering</li>
+        <li>Insert images, tables, headers/footers</li>
+      </ul>
+      <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Microsoft_Word_2013_screenshot.png" alt="MS Word"></div>
+    </div>
+    <div class="hindi">
+      <p><strong>बनाना और सहेजना:</strong> Word खोलें → New → लिखें → File → Save As → .docx या .pdf चुनें। अर्थपूर्ण नाम रखें।</p>
+      <h3>फॉर्मेटिंग</h3>
+      <ul>
+        <li>फॉन्ट, आकार, बोल्ड/इटैलिक/अंडरलाइन</li>
+        <li>अलाइनमेंट, लाइन स्पेसिंग, बुलेट व नंबरिंग</li>
+        <li>इमेज, टेबल, हेडर/फूटर डालें</li>
+      </ul>
+      <div class="img-ref"><img src="https://upload.wikimedia.org/wikipedia/commons/6/6f/Microsoft_Word_2013_screenshot.png" alt="MS Word"></div>
+    </div>
+
+    <div class="quiz" id="quiz3">
+      <h3>Chapter 3 Quiz — 10 Questions</h3>
+      <div id="questions3"></div>
+      <button class="btn-check" onclick="checkAnswers3()">Check Answers</button>
+      <div id="score3" class="result" style="display:none"></div>
+    </div>
+  </section>
+</main>
+<footer style="text-align:center;padding:12px;background:#1b6fb0;color:#fff;margin-top:18px">&copy; 2025 RMS Govindpur — Chapter 3</footer>
+
+<script>
+let hindiVisible=false;
+function toggleLanguage(){hindiVisible=!hindiVisible;document.querySelectorAll('.hindi').forEach(e=>e.style.display=hindiVisible?'block':'none');document.querySelectorAll('.english').forEach(e=>e.style.display=hindiVisible?'none':'block');document.getElementById('toggleBtn').textContent=hindiVisible?'Switch to English':'Switch to हिंदी'; render3();}
+const data3=[
+ {q_en:'Which file extension is usually used by Word?', options_en:['.jpg','.mp3','.docx','.txt'], ans:2, exp_en:'Word uses .docx format.', q_hi:'Word आमतौर पर किस फाइल एक्सटेंशन का उपयोग करता है?', options_hi:['.jpg','.mp3','.docx','.txt'], exp_hi:'.docx Word का स्टैण्डर्ड फॉर्मैट है।'},
+ {q_en:'How to make text bold?', options_en:['Ctrl+B','Ctrl+I','Ctrl+U','Alt+F4'], ans:0, exp_en:'Ctrl+B toggles bold.', q_hi:'टेक्स्ट को बोल्ड कैसे बनाते हैं?', options_hi:['Ctrl+B','Ctrl+I','Ctrl+U','Alt+F4'], exp_hi:'Ctrl+B से बोल्ड होता है।'},
+ {q_en:'Which feature adds page numbers?', options_en:['Insert','Review','View','References'], ans:0, exp_en:'Page numbers are inserted via Insert → Page Number.', q_hi:'पेज नंबर किस फीचर से जोड़े जाते हैं?', options_hi:['Insert','Review','View','References'], exp_hi:'Insert मेनू से Page Number जोड़ा जाता है।'},
+ {q_en:'True or False: Save As lets you change file format.', options_en:['True','False'], ans:0, exp_en:'Save As allows choosing a different format like PDF.', q_hi:'सही या गलत: Save As से आप फाइल फॉर्मेट बदल सकते हैं।', options_hi:['सही','गलत'], exp_hi:'Save As से फॉर्मेट बदला जा सकता है।'},
+ {q_en:'Which tab helps to add a table?', options_en:['Home','Insert','Layout','Review'], ans:1, exp_en:'Insert tab contains Table option.', q_hi:'कौन सा टैब टेबल जोड़ने में मदद करता है?', options_hi:['Home','Insert','Layout','Review'], exp_hi:'Insert टैब में Table होता है।'},
+ {q_en:'What is a header?', options_en:['Top page area','Bottom area','Image','Font style'], ans:0, exp_en:'Header appears at top of each page.', q_hi:'हैडर क्या है?', options_hi:['पेज का ऊपरी क्षेत्र','निचला क्षेत्र','छवि','फ़ॉन्ट शैली'], exp_hi:'हैडर प्रत्येक पेज के ऊपर दिखता है।'},
+ {q_en:'Which is used for collaborative comments?', options_en:['Track Changes','Watermark','Page Break','Margins'], ans:0, exp_en:'Track Changes and Comments help collaboration.', q_hi:'सहयोगी टिप्पणियों के लिए कौन सा उपयोग होता है?', options_hi:['Track Changes','Watermark','Page Break','Margins'], exp_hi:'Track Changes और Comments सहयोग में मदद करते हैं।'},
+ {q_en:'How to align text center?', options_en:['Ctrl+L','Ctrl+E','Ctrl+R','Ctrl+J'], ans:1, exp_en:'Ctrl+E centers text.', q_hi:'टेक्स्ट को केंद्र कैसे संरेखित करें?', options_hi:['Ctrl+L','Ctrl+E','Ctrl+R','Ctrl+J'], exp_hi:'Ctrl+E टेक्स्ट को केंद्र में लाता है।'},
+ {q_en:'Which saves file as PDF?', options_en:['Save','Save As','Print','Close'], ans:1, exp_en:'Save As → choose PDF format.', q_hi:'कौन सा विकल्प फाइल को PDF में सहेजता है?', options_hi:['Save','Save As','Print','Close'], exp_hi:'Save As से PDF चुना जा सकता है।'},
+ {q_en:'True or False: You can insert images in Word.', options_en:['True','False'], ans:0, exp_en:'Images can be inserted via Insert → Pictures.', q_hi:'सही या गलत: आप Word में इमेज डाल सकते हैं।', options_hi:['सही','गलत'], exp_hi:'Insert → Pictures से इमेज डाली जाती है।'}
+];
+
+function render3(){
+ const qdiv=document.getElementById('questions3'); qdiv.innerHTML=''; const useHindi=hindiVisible;
+ data3.forEach((it,i)=>{
+  const q=useHindi?it.q_hi:it.q_en; const opts=useHindi?it.options_hi:it.options_en;
+  const div=document.createElement('div'); div.className='q';
+  let html=`<strong>${i+1}. ${q}</strong><div>`;
+  opts.forEach((o,idx)=> html += `<label class="option"><input type="radio" name="q3_${i}" value="${idx}"> ${o}</label>`);
+  html += `</div><div id="exp3_${i}" style="display:none"><small class="explain"></small></div>`;
+  div.innerHTML=html; qdiv.appendChild(div);
+ });
+}
+render3();
+function checkAnswers3(){
+ let score=0; const useHindi=hindiVisible;
+ data3.forEach((it,i)=>{
+  const sel=document.querySelector(`input[name="q3_${i}"]:checked`);
+  const expDiv=document.getElementById(`exp3_${i}`);
+  const expText= useHindi? it.exp_hi: it.exp_en;
+  if(sel){ const val=parseInt(sel.value,10); if(val===it.ans) score++; expDiv.querySelector('.explain').textContent = (val===it.ans? (useHindi?'सही — ':'Correct — '):(useHindi?'गलत — ':'Incorrect — ')) + expText; }
+  else expDiv.querySelector('.explain').textContent = (useHindi?'उत्तर नहीं दिया — ':'No answer — ') + expText;
+  expDiv.style.display='block';
+ });
+ document.getElementById('score3').style.display='block';
+ document.getElementById('score3').innerHTML = hindiVisible? `<strong>आपका स्कोर: ${score}/${data3.length}</strong>`:`<strong>Your Score: ${score}/${data3.length}</strong>`;
+ window.scrollTo({top:document.getElementById('quiz3').offsetTop,behavior:'smooth'});
+}
+</script>
+</body>
+</html>
