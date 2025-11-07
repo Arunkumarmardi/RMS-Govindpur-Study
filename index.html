@@ -103,17 +103,47 @@
     .hero button:hover {
       background: #0072ff;
     }
+/*
+    .study-mate {
+      .study-mate {
+        align-items: center;
+        background: #f5f5fa;
+        border: 0;
+        border-radius: 8px;
+        box-shadow: -10px -10px 30px 0 #fff, 10px 10px 30px 0 #1d0dca17;
+        box-sizing: border-box;
+        color: #2a1f62;
+        cursor: pointer;
+        display: flex;
+        font-family: "Cascadia Code", Consolas, Monaco, "Andale Mono", "Ubuntu Mono", monospace;
+        font-size: 1rem;
+        justify-content: center;
+        line-height: 1.5rem;
+        padding: 15px;
+        position: relative;
+        text-align: left;
+        transition: .2s;
+        user-select: none;
+        -webkit-user-select: none;
+        touch-action: manipulation;
+        white-space: pre;
+        width: max-content;
+        word-break: normal;
+        word-spacing: normal;
+      }
 
-    #study-mate {
-      text-decoration: none;
-      color: white;
+      .study-mate:hover {
+        background: #f8f8ff;
+        box-shadow: -15px -15px 30px 0 #fff, 15px 15px 30px 0 #1d0dca17;
+      }
+
+      @media (min-width: 768px) {
+        .study-mate {
+          padding: 24px;
+        }
+      }
     }
-
-    #study-mate:hover {
-      color: yellow;
-      text-shadow: 2px 2px 8px yellow;
-    }
-
+*/
     /* Classes Section */
     .classes {
       max-width: 1100px;
@@ -256,7 +286,7 @@
       transform: scale(1.5);
     }
 
-    .vid div{
+    .vid div {
       align-items: center;
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -318,8 +348,8 @@
   <section class="hero">
     <h2>Welcome to RMS Govindpur</h2>
     <p>Empowering students with knowledge, creativity, and discipline.</p>
-    <button>
-      <a href="study-materials.html" id="study-mate">Explore Study Materials</a>
+    <button class="study-mate">
+      <a href="study-materials.html">Explore Study Materials</a>
     </button>
   </section>
 
