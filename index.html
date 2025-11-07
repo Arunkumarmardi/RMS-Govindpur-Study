@@ -246,9 +246,10 @@
     }
 
     .vid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 10px;
+      display: block;
+      position: absolute;
+      background-position: center center;
+      background-repeat: no-repeat;
     }
 
     /* Footer */
@@ -363,12 +364,12 @@
 
   <div class="vid">
     <video controls width="500" autoplay loop muted>
-    <source src="vid6.mp4">
-  </video>
+      <source src="vid6.mp4">
+    </video>
 
-  <video controls width="500" autoplay loop muted>
-    <source src="vid3.mp4">
-  </video>
+    <video controls width="500" autoplay loop muted>
+      <source src="vid3.mp4">
+    </video>
   </div>
 
   <!-- Footer -->
