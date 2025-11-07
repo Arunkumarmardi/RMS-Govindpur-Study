@@ -63,17 +63,7 @@
       position: relative;
       align-items: center;
     }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      /*background: rgba(0, 0, 0, 0.45);*/
-    }
-
+    
     .hero h2 {
       position: relative;
       font-size: 3em;
@@ -140,7 +130,7 @@
 
     @media (min-width: 768px) {
       .study-mate {
-        padding: 24px;
+        padding: 16px;
       }
     }
 
@@ -346,10 +336,9 @@
 
   <!-- Hero Section -->
   <section class="hero">
-    <button onclick="document.location='study-materials'" class="study-mate">study-materials</button>
     <h2>Welcome to RMS Govindpur</h2>
     <p>Empowering students with knowledge, creativity, and discipline.</p>
-    
+    <button onclick="document.location='study-materials'" class="study-mate">study-materials</button>
   </section>
 
   <!-- Classes Section -->
