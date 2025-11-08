@@ -283,6 +283,13 @@
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 20px;
+    }
+
+    #vid1 {
+      transform: translateX(-40%);
+    }
+
+    #vid2 {
       transform: translateX(50%);
     }
 
@@ -397,11 +404,11 @@
 
   <section class="vid">
     <div>
-      <video controls width="500" autoplay loop muted>
+      <video controls width="500" autoplay loop muted id="vid1">
         <source src="vid6.mp4">
       </video>
 
-      <video controls width="500" autoplay loop muted>
+      <video controls width="500" autoplay loop muted id="vid2">
         <source src="vid3.mp4">
       </video>
     </div>
